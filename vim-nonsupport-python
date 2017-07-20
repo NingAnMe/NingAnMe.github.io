@@ -1,0 +1,33 @@
+# VIM不支持Python
+
+### 检查 vim 是不是支持 Python
+
+`anning@NingAnMe:~$ vim --version | grep python`
+
+`结果如下
++cryptv          +linebreak       **-python**          +vreplace
++cscope          +lispindent      **+python3**         +wildignore
+链接方式: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm    `
+
+支持 python3 ，不支持 python2
+
+### 卸载下载的 vim
+
+`$ sudo apt-get remove vim`
+
+### 下载最新的 vim
+
+`$ git clone https://github.com/vim/vim.git`
+
+### 编译安装最新的 vim
+
+`$ cd vim/src
+$ make clean
+$ ./configure --with-features=huge --enable-python3interp --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ --enable-rubyinterp --enable-luainterp --enable-perlinterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ --enable-multibyte --enable-cscope      --prefix=/usr/local/vim/
+$ sudo make install`
+
+### 如果报错，请先安装以下支持
+
+`$ sudo apt-get install python-dev
+$ sudo apt-get install python3-dev
+$ sudo apt-get install libncurses5-dev`
