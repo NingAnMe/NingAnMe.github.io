@@ -157,6 +157,10 @@ cmake --build . --target ycm_core
 
 `sudo apt-get install zsh -y`
 
+把Zsh设置为当前用户的默认Shell
+
+`chsh -s /bin/zsh`
+
 **安装 oh-my-zsh**
 
 `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
