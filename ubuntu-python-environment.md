@@ -1,5 +1,7 @@
 # Ubuntu系统Python工作学习一体化环境详细配置
 
+![touxiang.png](http://othja876s.bkt.clouddn.com/xiaoguotu.png)
+
 ### 升级系统
 
 `sudo apt-get update`
