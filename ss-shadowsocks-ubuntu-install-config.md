@@ -87,7 +87,8 @@ sysctl net.ipv4.tcp_congestion_control
 
 打开后将下面的内容粘贴到这个文件中，然后修改相关内容后保存。
 
-```{
+```
+{
      "server":"**修改为你的VPS地址，如101.22.33.204**",
      "server_port":8388,
      "local_address": "127.0.0.1",
