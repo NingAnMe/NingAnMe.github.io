@@ -50,12 +50,14 @@
 echo "tcp_bbr" >> /etc/modules-load.d/modules.conf
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p```
+sysctl -p
+```
 
 执行下面两条命令查看结果中是否都有*bbr*，如果有的话，说明 tcp bbr 模块已经启动。
 
 ```sysctl net.ipv4.tcp_available_congestion_control
-sysctl net.ipv4.tcp_congestion_control```
+sysctl net.ipv4.tcp_congestion_control
+```
 
 ### 开始部署ss服务
 
@@ -94,7 +96,8 @@ sysctl net.ipv4.tcp_congestion_control```
      "timeout":300,
      "method":"aes-256-cfb",
      "fast_open": false
-}```
+}
+```
 
 其他的内容不需要修改，除非你知道是做什么的。例如 8388 是连接的时候远程服务器的端口号。
 
