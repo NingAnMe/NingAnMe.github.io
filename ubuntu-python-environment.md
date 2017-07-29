@@ -1,6 +1,7 @@
-# Ubuntu系统Python工作学习一体化环境详细配置
-
-![touxiang.png](http://othja876s.bkt.clouddn.com/xiaoguotu.png)
+---
+title: Ubuntu 系统上详细配置 Python 工作学习一体化环境
+---
+![xiaoguotu.png](http://othja876s.bkt.clouddn.com/xiaoguotu.png)
 
 ### 升级系统
 
@@ -54,7 +55,7 @@ google-chrome
 
 ```
     # 安装 Python 发布版本，dev包必须安装，很多用pip安装包都需要编译
-    
+
     sudo apt-get install python2.7 python2.7-dev python3.6 python3.6-dev
     # 很多pip安装的包都需要libssl和libevent编译环境
     sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev python-dev python3-dev libncurses5-dev
@@ -250,6 +251,3 @@ $ ./install.sh
 [开源世界旅行手册](https://www.gitbook.com/book/wizardforcel/os-world-trip/details)
 
 [Python开发生态环境简介](https://github.com/dccrazyboy/pyeco/blob/master/pyeco.rst)
-
-
-

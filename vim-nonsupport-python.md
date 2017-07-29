@@ -1,5 +1,6 @@
-# VIM不支持Python的解决办法
-
+---
+title: VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本
+---
 ### 检查 vim 是不是支持 Python
 
 `anning@NingAnMe:~$ vim --version | grep python`

@@ -1,4 +1,5 @@
 .idea/
+.git/
 *.dmb
 *.rsc
 *.int

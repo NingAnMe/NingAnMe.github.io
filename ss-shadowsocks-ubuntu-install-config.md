@@ -1,4 +1,8 @@
-### 需要掌握的基本技能
+---
+title: 在 Ubuntu 上部署 shaodowsocks, 并优化速度
+---
+
+## 需要掌握的基本技能
 
 - 使用ssh工具连接Linux VPS进行相关操作。
 
@@ -6,7 +10,7 @@
 
 - 会vim的基本操作。
 
-### 需要的资源
+## 需要的资源
 
 - 搬瓦工VPS一个，ubuntu 16.04版本。**请购买KVM架构的VPS服务器版本。**如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。
 
@@ -59,7 +63,7 @@ sysctl -p
 sysctl net.ipv4.tcp_congestion_control
 ```
 
-### 开始部署ss服务
+## 开始部署ss服务
 
 添加安装时使用的源
 

@@ -1,21 +1,22 @@
-# 安装 oh-my-zsh
-
-下载oh-my-zsh
+---
+title: 安装 oh-my-zsh
+---
+### 下载oh-my-zsh
 
 ```
 marsloo@mars-Ideapad-V460:~$ sudo apt-get update
 marsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y
 ```
 
-用 wget 安装
+### 用 wget 安装
 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+`sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"``
 
-oh-my-zsh的github介绍
+### oh-my-zsh的github介绍
 
 [oh-my-zsh-github](https://github.com/robbyrussell/oh-my-zsh/wiki)
 
-h-my-zsh的配置在~/.zshrc文件中
+### h-my-zsh的配置在~/.zshrc文件中
 
 ```
 export ZSH=$HOME/.oh-my-zsh
@@ -61,10 +62,10 @@ export NVM_DIR="$HOME/.nvm"
 
 [主题](https://github.com/robbyrussell/oh-my-zsh/wiki/themes)
 
-把Zsh设置为当前用户的默认Shell
+### 把Zsh设置为当前用户的默认Shell
 
 `chsh -s /bin/zsh`
 
-重启一下电脑
+### 重启一下电脑
 
 `reboot`
