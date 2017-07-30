@@ -274,12 +274,12 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017-07-29-hello-world.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-09-16-install-use-mysql.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017-07-29-hello-world.html" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2016-09-16-install-use-mysql.html" itemprop="url">MySQL 的安装和基本指令</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T21:20:24+08:00">
-                2017-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-16T20:46:25+08:00">
+                2016-09-16
               </time>
             
 
@@ -342,15 +342,840 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装-MySQL-服务端-核心程序"><a href="#安装-MySQL-服务端-核心程序" class="headerlink" title="安装 MySQL 服务端,核心程序"></a>安装 MySQL 服务端,核心程序</h3><p><code>sudo apt-get install mysql-server</code></p>
+<h3 id="安装-MySQL-客户端"><a href="#安装-MySQL-客户端" class="headerlink" title="安装 MySQL 客户端"></a>安装 MySQL 客户端</h3><p><code>sudo apt-get isntall mysql-client</code></p>
+<h3 id="安装结束以后-使用命令验证是否安装并且启动成功"><a href="#安装结束以后-使用命令验证是否安装并且启动成功" class="headerlink" title="安装结束以后,使用命令验证是否安装并且启动成功"></a>安装结束以后,使用命令验证是否安装并且启动成功</h3><p><code>sudo netstat -tap | grep mysql</code></p>
+<h3 id="可以根据自己的需求，修改-MySQL-的配置文件（my-cnf）-使用以下命令"><a href="#可以根据自己的需求，修改-MySQL-的配置文件（my-cnf）-使用以下命令" class="headerlink" title="可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令"></a>可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令</h3><p><code>sudo vim /etc/mysql/my.cnf</code></p>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><h3 id="打开-MySQL"><a href="#打开-MySQL" class="headerlink" title="打开 MySQL"></a>打开 MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 启动 MySQL 服务</div><div class="line">sudo service mysql start</div><div class="line"></div><div class="line"># 使用 root 用户登录</div><div class="line">mysql -u root</div></pre></td></tr></table></figure>
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p><code>show databases;</code></p>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p><code>use information_schema</code></p>
+<h3 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h3><p><code>show tables;</code></p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p><code>quit 或者 exit</code></p>
+<h3 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h3><p><code>CREATE DATABASE &lt;数据库名字&gt;</code></p>
+<h3 id="在数据库中新建一个表"><a href="#在数据库中新建一个表" class="headerlink" title="在数据库中新建一个表"></a>在数据库中新建一个表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE &lt;表的名字&gt;</div><div class="line">(</div><div class="line">列名a 数据类型(数据长度)&lt;选填:PRIMARY KEY&gt;,</div><div class="line">列名b 数据类型(数据长度)&lt;选填:DEFAULT &apos;&lt;默认值&gt;&apos;&gt;，</div><div class="line">列名c 数据类型(数据长度) NOT NULL,</div><div class="line">列名d int auto_increment,</div><div class="line">PRIMARY KEY(&lt;列名&gt;),</div><div class="line">UNIQUE(&lt;列名&gt;),</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="创建关联"><a href="#创建关联" class="headerlink" title="创建关联"></a>创建关联</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 创建表的时候进行添加</div><div class="line">constraint symbol foreign key(本表列名) references &lt;关联表名&gt;(关联列名);</div><div class="line"># 已经创建好的表进行添加</div><div class="line">ALTER TABLE &lt;表名&gt; ADD FOREIGN KEY(本表列名) REFERENCES &lt;关联表名&gt;(关联列名);</div></pre></td></tr></table></figure>
+<h3 id="向表中插入数据"><a href="#向表中插入数据" class="headerlink" title="向表中插入数据"></a>向表中插入数据</h3><p><code>INSERT INTO &lt;表的名字&gt;(列名a,列名b,列名c) VALUES(值1,值2,值3);</code></p>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><p><code>DROP DATABASE &lt;数据库名字&gt;</code></p>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><p><code>DROP TABLE &lt;表的名字&gt;</code></p>
+<h3 id="加载-sql-文件"><a href="#加载-sql-文件" class="headerlink" title="加载 sql 文件"></a>加载 sql 文件</h3><p><code>source &lt;路径和文件名&gt;</code></p>
+<h2 id="SQL-约束"><a href="#SQL-约束" class="headerlink" title="SQL 约束"></a>SQL 约束</h2><p>主键(PRIMARY KEY)不能有重复,并且不能为空</p>
+<p>默认值(DEFAULT)当插入数据为空时,将使用默认值</p>
+<p>唯一值(UNIQUE)指定的列不能有重复的值,如果插入数据时重复,则插入数据失败</p>
+<p>外键 (FOREIGN KEY) 既能确保数据完整性，也能表现表之间的关系,一个表可以有多个外键，每个外键必须 REFERENCES (参考) 另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值</p>
+<p>非空(NOT NULL)被非空约束的列，在插入值时必须非空,如果为空,会被警告,但是插入数据成功(5.5版本),禁止插入数据(5.6版本以上)</p>
+<h2 id="SELECT语句详解"><a href="#SELECT语句详解" class="headerlink" title="SELECT语句详解"></a>SELECT语句详解</h2><h3 id="基本的SELECT语句"><a href="#基本的SELECT语句" class="headerlink" title="基本的SELECT语句"></a>基本的SELECT语句</h3><p>基本格式 :</p>
+<p><code>SELECT 要查询的列名 FROM 表名字 WHERE 限制条件;</code></p>
+<h3 id="数学符号条件"><a href="#数学符号条件" class="headerlink" title="数学符号条件"></a>数学符号条件</h3><p>SELECT 语句经常使用 WHERE 限制条件</p>
+<p>数学符号限制 : =, &lt;, &gt;, &lt;=, &gt;=</p>
+<p><code>SELECT name,age FROM employee WHERE age&gt;25;</code></p>
+<h3 id="逻辑关系"><a href="#逻辑关系" class="headerlink" title="逻辑关系"></a>逻辑关系</h3><p>可以使用 AND 和 OR :</p>
+<p><code>SELECT name,age FROM employee WHERE age&lt;25 OR age&gt;30;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 筛选出 age 大于 25，且 age 小于 30</div><div class="line">SELECT name,age FROM employee WHERE age&gt;25 AND age&lt;30;</div><div class="line"># 如果需要包含25和30这两个数字的话，可以替换为 **age BETWEEN 25 AND 30**</div></pre></td></tr></table></figure>
+<h3 id="IN-和-NOT-IN"><a href="#IN-和-NOT-IN" class="headerlink" title="IN 和 NOT IN"></a>IN 和 NOT IN</h3><p>使用 In 和 NOT IN 筛选在不在某个范围内</p>
+<p><code>SELECT name,age,phone,in_dpt FROM employee WHERE in_dpt IN (&#39;dpt3&#39;,&#39;dpt4&#39;);</code></p>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>LIKE在SQL语句中和通配符一起使用 <code>_</code>代表一个未指定字符,’%’代表不定量个未指定字符</p>
+<p><code>SELECT name,age,phone FROM employee WHERE phone LIKE &#39;1101__&#39;;</code></p>
+<h3 id="对结果进行排序"><a href="#对结果进行排序" class="headerlink" title="对结果进行排序"></a>对结果进行排序</h3><p>关键词<code>ORDER BY</code> 默认是升序排列,<code>ASC</code>指定升序,’DESC’指定降序</p>
+<p><code>SELECT name,age,salary,phone FROM employee ORDER BY salary DESC;</code></p>
+<h3 id="内置函数和计算"><a href="#内置函数和计算" class="headerlink" title="内置函数和计算"></a>内置函数和计算</h3><table>
+<thead>
+<tr>
+<th>函数名：</th>
+<th>COUNT</th>
+<th>SUM</th>
+<th>AVG</th>
+<th>MAX</th>
+<th>MIN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作用：</td>
+<td>计数</td>
+<td>求和</td>
+<td>求平均值</td>
+<td>最大值</td>
+<td>最小值</td>
+</tr>
+</tbody>
+</table>
+<p>AS 关键词可以给值重命名</p>
+<p><code>SELECT MAX(salary) AS max_salary,MIN(salary) FROM employee;</code></p>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>查询Tom所在部门做了几个工程.Tom在employee表,工程在project表.所查询的内容都来自一个表,这个时候可以使用子查询</p>
+<p><code>SELECT of_dpt,COUNT(proj_name) AS count_project FROM project
+WHERE of_dpt IN
+(SELECT in_dpt FROM employee WHERE name=&#39;Tom&#39;);</code></p>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>当处理多个表,并且结果来自不同的表的时候,使用 JOIN 操作,把多个表当作一个新的表进行操作</p>
+<p><code>SELECT id,name,people_num
+FROM employee,department
+WHERE employee.in_dpt = department.dpt_name
+ORDER BY id;</code></p>
+<p>或者使用 JOIN ON 语法</p>
+<p><code>SELECT id,name,people_num
+FROM employee JOIN department
+ON employee.in_dpt = department.dpt_name
+ORDER BY id;</code></p>
+<p><code>GROUP BY</code> 使用某一列的值作为唯一值进行组合,相同的项会被组合到一块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">inner join是指</div><div class="line">select * from a inner join b on a.aid = b.bid仅取出a,b匹配的数据</div><div class="line"></div><div class="line">left join 指:</div><div class="line">select * from a left join b on a.aid = b.bid</div><div class="line">首先取出a表中所有数据,然后再加上与a,b匹配的的数据</div><div class="line"></div><div class="line">right join</div><div class="line">指的是首先取出b表中所有数据,然后再加上与a,b匹配的的数据</div></pre></td></tr></table></figure>
+<h2 id="数据库和表的修改和删除"><a href="#数据库和表的修改和删除" class="headerlink" title="数据库和表的修改和删除"></a>数据库和表的修改和删除</h2><h3 id="对数据库的修改"><a href="#对数据库的修改" class="headerlink" title="对数据库的修改"></a>对数据库的修改</h3><p>删除数据库</p>
+<p><code>DROP DATABASE &lt;数据库名&gt;;</code></p>
+<h3 id="对一张表的修改"><a href="#对一张表的修改" class="headerlink" title="对一张表的修改"></a>对一张表的修改</h3><p>重命名一张表,三种命令格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RENAME TABLE 原名 TO 新名字;</div><div class="line">ALTER TABLE 原名 RENAME 新名;</div><div class="line">ALTER TABLE 原名 RENAME TO 新名;</div></pre></td></tr></table></figure>
+<p>删除一张表</p>
+<p><code>DROP TABLE &lt;表名字&gt;;</code></p>
+<h3 id="对一列的修改-对表结构的修改"><a href="#对一列的修改-对表结构的修改" class="headerlink" title="对一列的修改(对表结构的修改)"></a>对一列的修改(对表结构的修改)</h3><p>增加一列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE 表名字 ADD COLUMN 列名字 数据类型 约束;</div><div class="line"></div><div class="line">或： ALTER TABLE 表名字 ADD 列名字 数据类型 约束;</div><div class="line"></div><div class="line"># 将新的列放在某一列的后面,使用关键词 AFTER</div><div class="line"></div><div class="line">ALTER TABLE 表名字 ADD COLUMN &lt;新列名字&gt; 数据类型 约束 **AFTER** &lt;某一列&gt;;</div><div class="line"></div><div class="line">放在第一列,在最后使用关键词 **FIRST**</div></pre></td></tr></table></figure>
+<p>删除一列,将 ADD 改为 DROP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE 表名字 DROP COLUMN 列名字;</div><div class="line"></div><div class="line">或： ALTER TABLE 表名字 DROP 列名字;</div></pre></td></tr></table></figure>
+<p>重命名一列(修改一列),当原列名和新列名相同时,则只修改数据类型或约束或者位置</p>
+<p><code>ALTER TABLE 表名字 CHANGE 原列名 新列名 数据类型 约束;</code></p>
+<p>修改数据类型</p>
+<p><code>ALTER TABLE 表名字 MODIFY 列名字 新数据类型;</code></p>
+<h3 id="对表的内容修改"><a href="#对表的内容修改" class="headerlink" title="对表的内容修改"></a>对表的内容修改</h3><p>修改表中的某个值</p>
+<p><code>UPDATE 表名字 SET 列1=值1,列2=值2 WHERE 条件;</code></p>
+<p>删除一行记录</p>
+<p><code>DELETE FROM 表名字 WHERE 条件;</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-08-08-ss-shadowsocks-ubuntu-install-config.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016-08-08-ss-shadowsocks-ubuntu-install-config.html" itemprop="url">在 Ubuntu 上部署 shaodowsocks, 并优化速度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-08T20:46:25+08:00">
+                2016-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="需要掌握的基本技能"><a href="#需要掌握的基本技能" class="headerlink" title="需要掌握的基本技能"></a>需要掌握的基本技能</h2><ul>
+<li><p>使用ssh工具连接Linux VPS进行相关操作。</p>
+</li>
+<li><p>了解ubuntu系统版本。</p>
+</li>
+<li><p>会vim的基本操作。</p>
+</li>
+</ul>
+<h2 id="需要的资源"><a href="#需要的资源" class="headerlink" title="需要的资源"></a>需要的资源</h2><ul>
+<li>搬瓦工VPS一个，ubuntu 16.04版本。<strong>请购买KVM架构的VPS服务器版本。</strong>如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。</li>
+</ul>
+<h3 id="使用的服务"><a href="#使用的服务" class="headerlink" title="使用的服务"></a>使用的服务</h3><ul>
+<li><p>shadowsocks-libev 是 shadowsocks 服务的 C 语言重写版本，软件体积小，速度快，适合在小内存服务器中使用，如搬瓦工最便宜的服务器。</p>
+</li>
+<li><p>TCP BBR拥塞控制技术。目的是要尽量跑满带宽，可以明显加快ss服务的速度，看1080高清无压力，效果不比锐速差。</p>
+</li>
+</ul>
+<h3 id="优化速度，部署TCP-BBR"><a href="#优化速度，部署TCP-BBR" class="headerlink" title="优化速度，部署TCP BBR"></a>优化速度，部署TCP BBR</h3><p>只有 KVM 架构的 VPS 服务器才能更新 Linux 内核版本,上面提到了.</p>
+<p>通过ssh连接VPS，推荐使用Xshell。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4219173-fdf0de25e64faffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>连接后开始执行下面的命令。</p>
+<p>下载最新的 Linux 内核。因为只有内核版本在4.9版本以上才能开启 BBR 。</p>
+<p><code>wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.11/linux-image-4.11.0-041100-generic_4.11.0-041100.201705041534_amd64.deb</code></p>
+<p>安装最新内核</p>
+<p><code>dpkg -i linux-image-4.*.deb</code></p>
+<p>更新 grub 系统引导文件</p>
+<p><code>update-grub</code></p>
+<p>重启服务器</p>
+<p><code>reboot</code></p>
+<p>开机后执行 <code>uname -r</code> 命令看看是不是内核4.11版本。</p>
+<p>执行 <code>lsmod | grep bbr</code>，如果结果中没有 tcp_bbr 的话就依次执行下面五条命令</p>
+<figure class="highlight plain"><figcaption><span>tcp_bbr</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">echo &quot;tcp_bbr&quot; &gt;&gt; /etc/modules-load.d/modules.conf</div><div class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</div><div class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure>
+<p>执行下面两条命令查看结果中是否都有<em>bbr</em>，如果有的话，说明 tcp bbr 模块已经启动。</p>
+<figure class="highlight plain"><figcaption><span>net.ipv4.tcp_available_congestion_control</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl net.ipv4.tcp_congestion_control</div></pre></td></tr></table></figure>
+<h2 id="开始部署ss服务"><a href="#开始部署ss服务" class="headerlink" title="开始部署ss服务"></a>开始部署ss服务</h2><p>添加安装时使用的源</p>
+<p><code>sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev</code></p>
+<p>更新软件</p>
+<p><code>sudo apt-get update</code></p>
+<p>安装 shadowsocks-libev服务</p>
+<p><code>sudo apt install shadowsocks-libev</code></p>
+<p>到此为止，shadowsocks服务已经安装到VPS服务器当中了。</p>
+<p>下面要做的就是配置shadowsocks服务。</p>
+<p>安装vim编辑器</p>
+<p><code>sodu apt-get install vim</code></p>
+<p>打开shadowsocks配置文件</p>
+<p><code>sudo vim /etc/shadowsocks-libev/config.json</code></p>
+<p>打开后将下面的内容粘贴到这个文件中，然后修改相关内容后保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">     &quot;server&quot;:&quot;**修改为你的VPS地址，如101.22.33.204**&quot;,</div><div class="line">     &quot;server_port&quot;:8388,</div><div class="line">     &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">     &quot;local_port&quot;:1080,</div><div class="line">     &quot;password&quot;:&quot;**修改为你希望的连接密码，如ninganme**&quot;,</div><div class="line">     &quot;timeout&quot;:300,</div><div class="line">     &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">     &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其他的内容不需要修改，除非你知道是做什么的。例如 8388 是连接的时候远程服务器的端口号。</p>
+<p>然后打开 shadowsocks服务,并在后台运行,输完命令后敲一下回车。</p>
+<p><code>nohup ss-server -c /etc/shadowsocks-libev/config.json &amp;</code></p>
+<p>到此为止，shadowsocks服务已经在你的服务器部署完毕了，你可以使用手机或者电脑连接测试了。</p>
+<p>linux 系统使用 shadowsocks-qt5 连接,windows ios 和 安卓系统使用 shaodowsocks 连接</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-05-django-install-and-use.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016-07-05-django-install-and-use.html" itemprop="url">Django 的安装和基本指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-05T20:46:25+08:00">
+                2016-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Django环境构建与目录结构"><a href="#Django环境构建与目录结构" class="headerlink" title="Django环境构建与目录结构"></a>Django环境构建与目录结构</h2><h3 id="安装Django"><a href="#安装Django" class="headerlink" title="安装Django"></a>安装Django</h3><p>首先安装pip组件</p>
+<p><code>sudo apt-get install python3-pip</code></p>
+<p>如果pip版本过低,可以使用以下命令对其进行升级</p>
+<p><code>sudo pip3 install --upgrade pip</code></p>
+<p>安装Django</p>
+<p><code>sudo pip3 install Django</code></p>
+<h3 id="使用-virtualenv-实现开发环境分离"><a href="#使用-virtualenv-实现开发环境分离" class="headerlink" title="使用 virtualenv 实现开发环境分离"></a>使用 virtualenv 实现开发环境分离</h3><p>安装virtualenv</p>
+<p><code>sudo pip3 install virtualenv</code></p>
+<p>创建一个虚拟环境</p>
+<p><code>virtualenv django</code></p>
+<p>读取环境使用 source 命令</p>
+<p><code>source ./django/bin/activate</code></p>
+<p>退出虚拟开发黄静,使用</p>
+<p><code>deactivate</code></p>
+<h3 id="介绍Django的结构"><a href="#介绍Django的结构" class="headerlink" title="介绍Django的结构"></a>介绍Django的结构</h3><p>urls.py</p>
+<p>链接入口,关联到对应的 views.py 的一个函数,访问的连接就对应一个函数</p>
+<p>views.py</p>
+<p>处理用户发出的请求,从 urls.py 中对应而来,渲染 templates 中的网页</p>
+<p>models.py</p>
+<p>与数据库操作相关,存入或读取数据时使用.不使用数据库的时候,也可以当作一般的类封装文件</p>
+<p>forms.py</p>
+<p>表单,用户在浏览器上输图提交,对数据的验证工作以及输入框的生成等工作,都依托于次</p>
+<p>admin.py</p>
+<p>后台文件</p>
+<p>settings.py</p>
+<p>Django 的设置和配置文件,比如 DEBUG 开关</p>
+<p>templates目录</p>
+<p>views.py中的函数渲染 templates 中的 html 模板,得到动态内容的网页,也可以使用缓存来提高渲染速度</p>
+<h2 id="Django-基本命令"><a href="#Django-基本命令" class="headerlink" title="Django 基本命令"></a>Django 基本命令</h2><h3 id="新建一个Django-Project"><a href="#新建一个Django-Project" class="headerlink" title="新建一个Django Project"></a>新建一个Django Project</h3><p><code>django-admin.py startproject &lt;project-name&gt;</code></p>
+<h3 id="新建-app"><a href="#新建-app" class="headerlink" title="新建 app"></a>新建 app</h3><p><code>python3 manage.py startapp &lt;app-name&gt;</code></p>
+<p>或者</p>
+<p><code>django-admin.pt startapp &lt;app-name&gt;</code></p>
+<h3 id="同步数据库"><a href="#同步数据库" class="headerlink" title="同步数据库"></a>同步数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python manage.py makemigrations</div><div class="line">python manege.py migrate</div></pre></td></tr></table></figure>
+<p>当在 models.py 中新增类时,运行它就可以自动在数据库中创建表</p>
+<h3 id="使用开发服务器"><a href="#使用开发服务器" class="headerlink" title="使用开发服务器"></a>使用开发服务器</h3><p>默认情况下,在 8080 端口启动</p>
+<p><code>python manage.py runserver</code></p>
+<h3 id="清空数据库"><a href="#清空数据库" class="headerlink" title="清空数据库"></a>清空数据库</h3><p>选择 yes 会把数据库全部清空掉,只留下空表</p>
+<p><code>python manage.py flush</code></p>
+<h3 id="创建超级管理员"><a href="#创建超级管理员" class="headerlink" title="创建超级管理员"></a>创建超级管理员</h3><p><code>python manage.py createsuperuser</code></p>
+<h3 id="导出数据-导入数据"><a href="#导出数据-导入数据" class="headerlink" title="导出数据 导入数据"></a>导出数据 导入数据</h3><p><code>python manage.py dumpdata &lt;appname&gt; &gt; &lt;appname&gt;.json</code></p>
+<h3 id="Django-项目环境终端"><a href="#Django-项目环境终端" class="headerlink" title="Django 项目环境终端"></a>Django 项目环境终端</h3><p>这个命令和直接运行python 进入shell 的区别是:你可以在这个shell里面调用当前项目的modle.py中的API,对于操作数据和一些小测试非常方便</p>
+<p><code>python manage.py shell</code></p>
+<h3 id="数据库命令行"><a href="#数据库命令行" class="headerlink" title="数据库命令行"></a>数据库命令行</h3><p>Django 会自动进入在 settings.py 中设置的数据库,这个终端可以执行数据库的SQL语句.</p>
+<p><code>python manage.py dbshell</code></p>
+<h3 id="直接输入以下命令-查看更多"><a href="#直接输入以下命令-查看更多" class="headerlink" title="直接输入以下命令,查看更多"></a>直接输入以下命令,查看更多</h3><p><code>python manage.py</code></p>
+<h2 id="视图和连接路由"><a href="#视图和连接路由" class="headerlink" title="视图和连接路由"></a>视图和连接路由</h2><h3 id="创建新的项目"><a href="#创建新的项目" class="headerlink" title="创建新的项目"></a>创建新的项目</h3><p><code>django-admin.py startproject &lt;项目名&gt;</code></p>
+<h3 id="在项目的文件中创建新的应用"><a href="#在项目的文件中创建新的应用" class="headerlink" title="在项目的文件中创建新的应用"></a>在项目的文件中创建新的应用</h3><p><code>python3 manage.py startapp &lt;应用名&gt;</code></p>
+<h3 id="将新定应的应用添加到-settings-py-的-INSTALLED-APPS"><a href="#将新定应的应用添加到-settings-py-的-INSTALLED-APPS" class="headerlink" title="将新定应的应用添加到 settings.py 的 INSTALLED_APPS"></a>将新定应的应用添加到 settings.py 的 INSTALLED_APPS</h3><p>Django 就可以自动找到app中的模板文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">INSTALLED_APPS = (</div><div class="line">    &apos;django.contrib.admin&apos;,</div><div class="line">    &apos;django.contrib.auth&apos;,</div><div class="line">    &apos;django.contrib.contenttypes&apos;,</div><div class="line">    &apos;django.contrib.sessions&apos;,</div><div class="line">    &apos;django.contrib.messages&apos;,</div><div class="line">    &apos;django.contrib.staticfiles&apos;,</div><div class="line"></div><div class="line">    &apos;&lt;新的应用&gt;&apos;,</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="定义视图函数"><a href="#定义视图函数" class="headerlink" title="定义视图函数"></a>定义视图函数</h3><p>编辑 views.py 文件,第一行是用来声明文本编码为 utf-8,HttpResponse 是用来向网页返回内容,定义index()函数,第一个函数必须是request,request变量包含了 GET 或者 POST 方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#coding: utf-8</div><div class="line">from django.shortcuts import render</div><div class="line">from django.http import HttpResponse</div><div class="line"></div><div class="line"></div><div class="line">def index(request):</div><div class="line">    return HttpResponse(u&quot;Hello World!&quot;)</div></pre></td></tr></table></figure>
+<h3 id="定义视图相关的-URL-即路由配置"><a href="#定义视图相关的-URL-即路由配置" class="headerlink" title="定义视图相关的 URL,即路由配置"></a>定义视图相关的 URL,即路由配置</h3><p>编辑 urls.py 文件,从应用文件中引入 views 视图,然后赋值给链接函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">from django.conf.urls import url</div><div class="line">from django.contrib import admin</div><div class="line">from &lt;应用名&gt; import views as &lt;应用名&gt;_views  # new</div><div class="line"></div><div class="line">urlpatterns = [</div><div class="line">    url(r&apos;^$&apos;, &lt;应用名&gt;_views.index),  # new</div><div class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</div><div class="line">]</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015-07-16-vim-nonsupport-python.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015-07-16-vim-nonsupport-python.html" itemprop="url">VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-16T20:46:25+08:00">
+                2015-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="检查-vim-是不是支持-Python"><a href="#检查-vim-是不是支持-Python" class="headerlink" title="检查 vim 是不是支持 Python"></a>检查 vim 是不是支持 Python</h3><p><code>anning@NingAnMe:~$ vim --version | grep python</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">结果如下</div><div class="line"></div><div class="line">+cryptv          +linebreak       **-python**          +vreplace</div><div class="line">+cscope          +lispindent      **+python3**         +wildignore</div><div class="line">链接方式: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm</div></pre></td></tr></table></figure>
+<p>支持 python3 ，不支持 python2</p>
+<h3 id="卸载安装的-vim"><a href="#卸载安装的-vim" class="headerlink" title="卸载安装的 vim"></a>卸载安装的 vim</h3><p><code>$ dpkg -l | grep vim</code></p>
+<p>根据上面显示的内容进行卸载</p>
+<p><code>$ sudo dpkg -P vim vim-common vim-runtime vim-tiny</code></p>
+<h3 id="安装依赖库"><a href="#安装依赖库" class="headerlink" title="安装依赖库"></a>安装依赖库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \</div><div class="line">    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \</div><div class="line">    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \</div><div class="line">    python3-dev ruby-dev lua5.1 lua5.1-dev git</div></pre></td></tr></table></figure>
+<h3 id="下载最新的-vim"><a href="#下载最新的-vim" class="headerlink" title="下载最新的 vim"></a>下载最新的 vim</h3><p><code>$ git clone https://github.com/vim/vim.git</code></p>
+<h3 id="编译安装最新的-vim"><a href="#编译安装最新的-vim" class="headerlink" title="编译安装最新的 vim"></a>编译安装最新的 vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cd vim</div><div class="line"></div><div class="line">./configure --with-features=huge \</div><div class="line">            --enable-multibyte \</div><div class="line">            --enable-rubyinterp \</div><div class="line">            --enable-pythoninterp \</div><div class="line">            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \</div><div class="line">            --enable-perlinterp \</div><div class="line">            --enable-luainterp \</div><div class="line">            --enable-gui=gtk2 --enable-cscope --prefix=/usr</div><div class="line"></div><div class="line">make VIMRUNTIMEDIR=/usr/share/vim/vim80</div><div class="line"></div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h3 id="将vim设置为默认编辑器"><a href="#将vim设置为默认编辑器" class="headerlink" title="将vim设置为默认编辑器"></a>将vim设置为默认编辑器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set editor /usr/bin/vim</div><div class="line"></div><div class="line">sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set vi /usr/bin/vim</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015-07-14-install-oh-my-zsh.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015-07-14-install-oh-my-zsh.html" itemprop="url">安装 oh-my-zsh</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-14T20:46:25+08:00">
+                2015-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="下载oh-my-zsh"><a href="#下载oh-my-zsh" class="headerlink" title="下载oh-my-zsh"></a>下载oh-my-zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">marsloo@mars-Ideapad-V460:~$ sudo apt-get update</div><div class="line">marsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y</div></pre></td></tr></table></figure>
+<h3 id="用-wget-安装"><a href="#用-wget-安装" class="headerlink" title="用 wget 安装"></a>用 wget 安装</h3><p>`sh -c “$(wget <a href="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh" target="_blank" rel="external">https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh</a> -O -)”``</p>
+<h3 id="oh-my-zsh的github介绍"><a href="#oh-my-zsh的github介绍" class="headerlink" title="oh-my-zsh的github介绍"></a>oh-my-zsh的github介绍</h3><p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki" target="_blank" rel="external">oh-my-zsh-github</a></p>
+<h3 id="h-my-zsh的配置在-zshrc文件中"><a href="#h-my-zsh的配置在-zshrc文件中" class="headerlink" title="h-my-zsh的配置在~/.zshrc文件中"></a>h-my-zsh的配置在~/.zshrc文件中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">export ZSH=$HOME/.oh-my-zsh</div><div class="line">ZSH_THEME=&quot;gnzh&quot;</div><div class="line">DISABLE_UPDATE_PROMPT=true</div><div class="line">plugins=(git autojump sudo httpie colored-man-pages)</div><div class="line">source $ZSH/oh-my-zsh.sh</div><div class="line">export LANG=en_US.UTF-8</div><div class="line">export LC_ALL=en_US.UTF-8</div><div class="line"># Aliases configuration</div><div class="line">alias ll=&apos;ls -lrth&apos;</div><div class="line">alias la=&apos;ls -lrtha&apos;</div><div class="line">alias grep=&quot;grep --color=auto&quot;</div><div class="line">alias vi=&apos;vim&apos;</div><div class="line">alias mysql=&apos;/usr/local/mysql/bin/mysql&apos;</div><div class="line">alias mysqladm=&apos;/usr/local/mysql/bin/mysqladmin&apos;</div><div class="line">alias mysqld=&apos;/usr/local/mysql/bin/mysqld&apos;</div><div class="line">alias -s c=vim</div><div class="line">alias -s txt=vim</div><div class="line">alias -s gz=&apos;tar -xzvf&apos;</div><div class="line">alias -s tgz=&apos;tar -xzvf&apos;</div><div class="line">alias -s zip=&apos;unzip&apos;</div><div class="line">alias -s bz2=&apos;tar -xjvf&apos;</div><div class="line">alias -s jpg=&apos;imgcat&apos;</div><div class="line">alias -s gif=&apos;imgcat&apos;</div><div class="line">alias -s png=&apos;imgcat&apos;</div><div class="line"></div><div class="line">export PROJECT_HOME=$HOME/learnspace</div><div class="line">export WORKON_HOME=$HOME/Envs</div><div class="line">if [ ! -d $PROJECT_HOME ]; then</div><div class="line">    mkdir -p $PROJECT_HOME</div><div class="line">fi</div><div class="line">if [ ! -d $WORKON_HOME ]; then</div><div class="line">    mkdir -p $WORKON_HOME</div><div class="line">fi</div><div class="line"># Virtualenvwrapper</div><div class="line">source /usr/local/bin/virtualenvwrapper.sh</div><div class="line">source ~/.iterm2_shell_integration.`basename $SHELL`</div><div class="line"></div><div class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</div><div class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="external">主题</a></p>
+<h3 id="把Zsh设置为当前用户的默认Shell"><a href="#把Zsh设置为当前用户的默认Shell" class="headerlink" title="把Zsh设置为当前用户的默认Shell"></a>把Zsh设置为当前用户的默认Shell</h3><p><code>chsh -s /bin/zsh</code></p>
+<h3 id="重启一下电脑"><a href="#重启一下电脑" class="headerlink" title="重启一下电脑"></a>重启一下电脑</h3><p><code>reboot</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015-07-13-ubuntu-python-environment.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015-07-13-ubuntu-python-environment.html" itemprop="url">Ubuntu 系统上详细配置 Python 工作学习一体化环境</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-13T20:46:25+08:00">
+                2015-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://othja876s.bkt.clouddn.com/xiaoguotu.png" alt="xiaoguotu.png"></p>
+<h3 id="升级系统"><a href="#升级系统" class="headerlink" title="升级系统"></a>升级系统</h3><p><code>sudo apt-get update</code></p>
+<p><code>sudo apt-get upgrade</code></p>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><p>系统-语言-英文-重启-修改中文文件名 ; 系统-语言-中文-重启-保留英文文件名</p>
+<p>系统-亮度和锁屏</p>
+<p>系统-外观</p>
+<p>系统-软件和更新-附加驱动</p>
+<h3 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h3><p><strong>shadowsocks-qt5</strong></p>
+<p><a href="https://github.com/shadowsocks/shadowsocks-qt5/wiki" target="_blank" rel="external">shadowsocks-qt5-github-wiki</a></p>
+<p><strong>genpac</strong></p>
+<p><a href="https://github.com/JinnLynn/genpac" target="_blank" rel="external">genpac-gihub</a></p>
+<p>系统-网络-自动-pac ：file:///home/username/autopac.pac</p>
+<p><strong>浏览器</strong></p>
+<p>google-chrome</p>
+<h3 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h3><p><strong>anki</strong></p>
+<p><a href="https://apps.ankiweb.net/docs/manual.html" target="_blank" rel="external">anki用户手册</a></p>
+<p><strong>chrome-anki划词助手</strong></p>
+<p><a href="https://github.com/ninja33/anki-dict-helper" target="_blank" rel="external">anki 划词制卡助手-github</a></p>
+<p><strong>anki connect（anki划词助手配套文件）</strong></p>
+<p><a href="https://ninja33.github.io/20160817/anki-connect/#more" target="_blank" rel="external">anki划词助手配套文件</a></p>
+<h3 id="Python版本和编译"><a href="#Python版本和编译" class="headerlink" title="Python版本和编译"></a>Python版本和编译</h3><p>因为 python2 和 python3 在工作中都会用到，建议都安装，包括常见的编译环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 安装 Python 发布版本，dev包必须安装，很多用pip安装包都需要编译</div><div class="line"></div><div class="line">sudo apt-get install python2.7 python2.7-dev python3.6 python3.6-dev</div><div class="line"># 很多pip安装的包都需要libssl和libevent编译环境</div><div class="line">sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev python-dev python3-dev libncurses5-dev</div></pre></td></tr></table></figure>
+<p><strong>安装 pip</strong></p>
+<p><code>sudo apt-get install python-pip</code></p>
+<p><strong>安装 virtualenv</strong></p>
+<p><code>sudo pip install virtualenv</code></p>
+<p><strong>安装 virtualenvwrapper</strong></p>
+<p><code>sudo pip install virtualenvwrapper</code></p>
+<p><a href="http://www.jianshu.com/p/44ab75fbaef2" target="_blank" rel="external">python 虚拟环境virtualenv/virtualenvwrapper设置</a></p>
+<p><a href="http://www.jianshu.com/p/08c657bd34f1" target="_blank" rel="external">Python–Virtualenv简明教程</a></p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p><strong>安装配置 vim</strong></p>
+<p>安装vim<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"># 卸载安装的 vim</div><div class="line"></div><div class="line">dpkg -l | grep vim</div><div class="line"></div><div class="line"># 根据上面显示的内容进行卸载</div><div class="line"></div><div class="line">sudo dpkg -P vim vim-common vim-runtime vim-tiny</div><div class="line"></div><div class="line"># 安装依赖库</div><div class="line"></div><div class="line">sudo apt-get  libncurses5-dev libgnome2-dev libgnomeui-dev \</div><div class="line">    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \</div><div class="line">    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \</div><div class="line">    python3-dev ruby-dev lua5.1 lua5.1-dev git</div><div class="line"></div><div class="line"># 下载最新的 vim</div><div class="line"></div><div class="line">git clone https://github.com/vim/vim.git</div><div class="line"></div><div class="line"># 编译安装最新的 vim</div><div class="line"></div><div class="line">cd vim</div><div class="line"></div><div class="line">./configure --with-features=huge \</div><div class="line">            --enable-multibyte \</div><div class="line">            --enable-rubyinterp \</div><div class="line">            --enable-pythoninterp \</div><div class="line">            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \</div><div class="line">            --enable-perlinterp \</div><div class="line">            --enable-luainterp \</div><div class="line">            --enable-gui=gtk2 --enable-cscope --prefix=/usr</div><div class="line"></div><div class="line">make VIMRUNTIMEDIR=/usr/share/vim/vim80</div><div class="line"></div><div class="line">sudo make install</div><div class="line"></div><div class="line"># 将vim设置为默认编辑器</div><div class="line"></div><div class="line">sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set editor /usr/bin/vim</div><div class="line"></div><div class="line">sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set vi /usr/bin/vim</div></pre></td></tr></table></figure></p>
+<p>vim的配置文件<a href="https://github.com/NingAnMe/NingAnMe.github.io/.vimrc" target="_blank" rel="external">.vimrc</a></p>
+<p><strong>安装 Vunder </strong></p>
+<p><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
+<p><code>PluginInstall</code> 将插件都安装到当前的配置环境中</p>
+<p><strong>安装 youcompleteme</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 将youcompleteme clone 下来</div><div class="line">git clone https://github.com/Valloric/YouCompleteMe.git</div><div class="line"># 进入目录 将依赖克隆下来</div><div class="line">cd YouCompleteMe</div><div class="line">git submodule update --init --recursive</div><div class="line"># 将准备好的YouCompleteMe目录移动到~/.vim/bundle/YouCompleteMe</div><div class="line">cp ./YouCompleteMe ~/.vim/bundle/YouCompleteMe</div><div class="line"># 使用 cmake 和 python-dve 进行编译</div><div class="line">mkdir ycm_build</div><div class="line">cd ycm_build</div><div class="line">cmake -G &quot;Unix Makefiles&quot; . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</div><div class="line">cmake --build . --target ycm_core</div><div class="line"># 如果编译过程没有出错,就可以在Vunder安装了</div></pre></td></tr></table></figure>
+<p><strong>安装 zsh </strong></p>
+<p><code>sudo apt-get install zsh -y</code></p>
+<p>把Zsh设置为当前用户的默认Shell</p>
+<p><code>chsh -s /bin/zsh</code></p>
+<p><strong>安装 oh-my-zsh</strong></p>
+<p><code>sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></p>
+<p><strong>配置 ~/.zshrc</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">export ZSH=$HOME/.oh-my-zsh</div><div class="line"># rt ZSH=$HOME/.oh-my-zsh</div><div class="line">ZSH_THEME=&quot;gnzh&quot;</div><div class="line">DISABLE_UPDATE_PROMPT=true</div><div class="line">plugins=(git autojump sudo httpie colored-man-pages)</div><div class="line">source $ZSH/oh-my-zsh.sh</div><div class="line">export LANG=en_US.UTF-8</div><div class="line">export LC_ALL=en_US.UTF-8</div><div class="line"># Aliases configuration</div><div class="line">alias ll=&apos;ls -lrth&apos;</div><div class="line">alias la=&apos;ls -lrtha&apos;</div><div class="line">alias grep=&quot;grep --color=auto&quot;</div><div class="line">alias vi=&apos;vim&apos;</div><div class="line">alias mysql=&apos;/usr/local/mysql/bin/mysql&apos;</div><div class="line">alias mysqladm=&apos;/usr/local/mysql/bin/mysqladmin&apos;</div><div class="line">alias mysqld=&apos;/usr/local/mysql/bin/mysqld&apos;</div><div class="line">alias -s c=vim</div><div class="line">alias -s txt=vim</div><div class="line">alias -s gz=&apos;tar -xzvf&apos;</div><div class="line">alias -s tgz=&apos;tar -xzvf&apos;</div><div class="line">alias -s zip=&apos;unzip&apos;</div><div class="line">alias -s bz2=&apos;tar -xjvf&apos;</div><div class="line">alias -s jpg=&apos;imgcat&apos;</div><div class="line">alias -s gif=&apos;imgcat&apos;</div><div class="line">alias -s png=&apos;imgcat&apos;</div><div class="line"></div><div class="line">export PROJECT_HOME=$HOME/learnspace</div><div class="line">export WORKON_HOME=$HOME/Envs</div><div class="line">if [ ! -d $PROJECT_HOME ]; then</div><div class="line">    mkdir -p $PROJECT_HOME</div><div class="line">fi</div><div class="line">if [ ! -d $WORKON_HOME ]; then</div><div class="line">    mkdir -p $WORKON_HOME</div><div class="line">fi</div><div class="line"># Virtualenvwrapper</div><div class="line"># source /usr/local/bin/virtualenvwrapper.sh</div><div class="line"># source ~/.iterm2_shell_integration.`basename $SHELL`</div></pre></td></tr></table></figure>
+<p><strong>安装 zsh 配色</strong></p>
+<p>16.04以上版本,直接选中 编辑-首配置-配色-solarized</p>
+<p>或者安装 配色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git</div><div class="line">$ cd gnome-terminal-colors-solarized</div><div class="line">$ ./install.sh</div></pre></td></tr></table></figure>
+<p><strong>安装 git</strong></p>
+<p><code>$ sudo apt-get install git</code></p>
+<p><em>git 教程</em></p>
+<p><a href="http://www.jianshu.com/p/ea6341224e89" target="_blank" rel="external">Git中.gitignore的配置语法</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/" target="_blank" rel="external">廖雪峰 git 教程</a></p>
+<p><strong>Python风格指南</strong></p>
+<p><a href="https://lizhe2004.gitbooks.io/code-style-guideline-cn/content/python/python-pep8.html" target="_blank" rel="external">Python风格指南</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://xiaocong.github.io/blog/2013/06/18/customize-python-dev-environment-on-ubuntu/" target="_blank" rel="external">在Ubuntu下配置舒服的Python开发环境</a></p>
+<p><a href="http://www.jianshu.com/p/bc19b91354ef" target="_blank" rel="external">Vim与Python真乃天作之合：将Vim打造为强大的Python开发环境</a></p>
+<p><a href="https://wizardforcel.gitbooks.io/use-vim-as-ide/content/" target="_blank" rel="external">所需即所获：像 IDE 一样使用 vim</a></p>
+<p><a href="http://www.jianshu.com/p/f0513d18742a" target="_blank" rel="external">把vim配置成顺手的python轻量级IDE</a></p>
+<p><a href="https://www.gitbook.com/book/wizardforcel/os-world-trip/details" target="_blank" rel="external">开源世界旅行手册</a></p>
+<p><a href="https://github.com/dccrazyboy/pyeco/blob/master/pyeco.rst" target="_blank" rel="external">Python开发生态环境简介</a></p>
 
           
         
@@ -419,7 +1244,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/touxiang.jpg"
                alt="NingAnMe" />
           <p class="site-author-name" itemprop="name">NingAnMe</p>
            
@@ -431,7 +1256,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

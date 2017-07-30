@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="NingAnMe, Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="安装安装 MySQL 服务端,核心程序sudo apt-get install mysql-server 安装 MySQL 客户端sudo apt-get isntall mysql-client 安装结束以后,使用命令验证是否安装并且启动成功sudo netstat -tap | grep mysql 可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令sudo vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 的安装和基本指令">
+<meta property="og:url" content="http://yoursite.com/2016-09-16-install-use-mysql.html">
+<meta property="og:site_name" content="NingAnMe">
+<meta property="og:description" content="安装安装 MySQL 服务端,核心程序sudo apt-get install mysql-server 安装 MySQL 客户端sudo apt-get isntall mysql-client 安装结束以后,使用命令验证是否安装并且启动成功sudo netstat -tap | grep mysql 可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令sudo vim">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-30T07:10:22.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 的安装和基本指令">
+<meta name="twitter:description" content="安装安装 MySQL 服务端,核心程序sudo apt-get install mysql-server 安装 MySQL 客户端sudo apt-get isntall mysql-client 安装结束以后,使用命令验证是否安装并且启动成功sudo netstat -tap | grep mysql 可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令sudo vim">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-09-16-install-use-mysql.html"/>
+
+
+
+
+
+  <title>MySQL 的安装和基本指令 | NingAnMe</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">NingAnMe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-09-16-install-use-mysql.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL 的安装和基本指令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-16T20:46:25+08:00">
+                2016-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装-MySQL-服务端-核心程序"><a href="#安装-MySQL-服务端-核心程序" class="headerlink" title="安装 MySQL 服务端,核心程序"></a>安装 MySQL 服务端,核心程序</h3><p><code>sudo apt-get install mysql-server</code></p>
+<h3 id="安装-MySQL-客户端"><a href="#安装-MySQL-客户端" class="headerlink" title="安装 MySQL 客户端"></a>安装 MySQL 客户端</h3><p><code>sudo apt-get isntall mysql-client</code></p>
+<h3 id="安装结束以后-使用命令验证是否安装并且启动成功"><a href="#安装结束以后-使用命令验证是否安装并且启动成功" class="headerlink" title="安装结束以后,使用命令验证是否安装并且启动成功"></a>安装结束以后,使用命令验证是否安装并且启动成功</h3><p><code>sudo netstat -tap | grep mysql</code></p>
+<h3 id="可以根据自己的需求，修改-MySQL-的配置文件（my-cnf）-使用以下命令"><a href="#可以根据自己的需求，修改-MySQL-的配置文件（my-cnf）-使用以下命令" class="headerlink" title="可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令"></a>可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令</h3><p><code>sudo vim /etc/mysql/my.cnf</code></p>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><h3 id="打开-MySQL"><a href="#打开-MySQL" class="headerlink" title="打开 MySQL"></a>打开 MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 启动 MySQL 服务</div><div class="line">sudo service mysql start</div><div class="line"></div><div class="line"># 使用 root 用户登录</div><div class="line">mysql -u root</div></pre></td></tr></table></figure>
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p><code>show databases;</code></p>
+<h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><p><code>use information_schema</code></p>
+<h3 id="查看表"><a href="#查看表" class="headerlink" title="查看表"></a>查看表</h3><p><code>show tables;</code></p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p><code>quit 或者 exit</code></p>
+<h3 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h3><p><code>CREATE DATABASE &lt;数据库名字&gt;</code></p>
+<h3 id="在数据库中新建一个表"><a href="#在数据库中新建一个表" class="headerlink" title="在数据库中新建一个表"></a>在数据库中新建一个表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE &lt;表的名字&gt;</div><div class="line">(</div><div class="line">列名a 数据类型(数据长度)&lt;选填:PRIMARY KEY&gt;,</div><div class="line">列名b 数据类型(数据长度)&lt;选填:DEFAULT &apos;&lt;默认值&gt;&apos;&gt;，</div><div class="line">列名c 数据类型(数据长度) NOT NULL,</div><div class="line">列名d int auto_increment,</div><div class="line">PRIMARY KEY(&lt;列名&gt;),</div><div class="line">UNIQUE(&lt;列名&gt;),</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="创建关联"><a href="#创建关联" class="headerlink" title="创建关联"></a>创建关联</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 创建表的时候进行添加</div><div class="line">constraint symbol foreign key(本表列名) references &lt;关联表名&gt;(关联列名);</div><div class="line"># 已经创建好的表进行添加</div><div class="line">ALTER TABLE &lt;表名&gt; ADD FOREIGN KEY(本表列名) REFERENCES &lt;关联表名&gt;(关联列名);</div></pre></td></tr></table></figure>
+<h3 id="向表中插入数据"><a href="#向表中插入数据" class="headerlink" title="向表中插入数据"></a>向表中插入数据</h3><p><code>INSERT INTO &lt;表的名字&gt;(列名a,列名b,列名c) VALUES(值1,值2,值3);</code></p>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><p><code>DROP DATABASE &lt;数据库名字&gt;</code></p>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><p><code>DROP TABLE &lt;表的名字&gt;</code></p>
+<h3 id="加载-sql-文件"><a href="#加载-sql-文件" class="headerlink" title="加载 sql 文件"></a>加载 sql 文件</h3><p><code>source &lt;路径和文件名&gt;</code></p>
+<h2 id="SQL-约束"><a href="#SQL-约束" class="headerlink" title="SQL 约束"></a>SQL 约束</h2><p>主键(PRIMARY KEY)不能有重复,并且不能为空</p>
+<p>默认值(DEFAULT)当插入数据为空时,将使用默认值</p>
+<p>唯一值(UNIQUE)指定的列不能有重复的值,如果插入数据时重复,则插入数据失败</p>
+<p>外键 (FOREIGN KEY) 既能确保数据完整性，也能表现表之间的关系,一个表可以有多个外键，每个外键必须 REFERENCES (参考) 另一个表的主键，被外键约束的列，取值必须在它参考的列中有对应值</p>
+<p>非空(NOT NULL)被非空约束的列，在插入值时必须非空,如果为空,会被警告,但是插入数据成功(5.5版本),禁止插入数据(5.6版本以上)</p>
+<h2 id="SELECT语句详解"><a href="#SELECT语句详解" class="headerlink" title="SELECT语句详解"></a>SELECT语句详解</h2><h3 id="基本的SELECT语句"><a href="#基本的SELECT语句" class="headerlink" title="基本的SELECT语句"></a>基本的SELECT语句</h3><p>基本格式 :</p>
+<p><code>SELECT 要查询的列名 FROM 表名字 WHERE 限制条件;</code></p>
+<h3 id="数学符号条件"><a href="#数学符号条件" class="headerlink" title="数学符号条件"></a>数学符号条件</h3><p>SELECT 语句经常使用 WHERE 限制条件</p>
+<p>数学符号限制 : =, &lt;, &gt;, &lt;=, &gt;=</p>
+<p><code>SELECT name,age FROM employee WHERE age&gt;25;</code></p>
+<h3 id="逻辑关系"><a href="#逻辑关系" class="headerlink" title="逻辑关系"></a>逻辑关系</h3><p>可以使用 AND 和 OR :</p>
+<p><code>SELECT name,age FROM employee WHERE age&lt;25 OR age&gt;30;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 筛选出 age 大于 25，且 age 小于 30</div><div class="line">SELECT name,age FROM employee WHERE age&gt;25 AND age&lt;30;</div><div class="line"># 如果需要包含25和30这两个数字的话，可以替换为 **age BETWEEN 25 AND 30**</div></pre></td></tr></table></figure>
+<h3 id="IN-和-NOT-IN"><a href="#IN-和-NOT-IN" class="headerlink" title="IN 和 NOT IN"></a>IN 和 NOT IN</h3><p>使用 In 和 NOT IN 筛选在不在某个范围内</p>
+<p><code>SELECT name,age,phone,in_dpt FROM employee WHERE in_dpt IN (&#39;dpt3&#39;,&#39;dpt4&#39;);</code></p>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>LIKE在SQL语句中和通配符一起使用 <code>_</code>代表一个未指定字符,’%’代表不定量个未指定字符</p>
+<p><code>SELECT name,age,phone FROM employee WHERE phone LIKE &#39;1101__&#39;;</code></p>
+<h3 id="对结果进行排序"><a href="#对结果进行排序" class="headerlink" title="对结果进行排序"></a>对结果进行排序</h3><p>关键词<code>ORDER BY</code> 默认是升序排列,<code>ASC</code>指定升序,’DESC’指定降序</p>
+<p><code>SELECT name,age,salary,phone FROM employee ORDER BY salary DESC;</code></p>
+<h3 id="内置函数和计算"><a href="#内置函数和计算" class="headerlink" title="内置函数和计算"></a>内置函数和计算</h3><table>
+<thead>
+<tr>
+<th>函数名：</th>
+<th>COUNT</th>
+<th>SUM</th>
+<th>AVG</th>
+<th>MAX</th>
+<th>MIN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作用：</td>
+<td>计数</td>
+<td>求和</td>
+<td>求平均值</td>
+<td>最大值</td>
+<td>最小值</td>
+</tr>
+</tbody>
+</table>
+<p>AS 关键词可以给值重命名</p>
+<p><code>SELECT MAX(salary) AS max_salary,MIN(salary) FROM employee;</code></p>
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p>查询Tom所在部门做了几个工程.Tom在employee表,工程在project表.所查询的内容都来自一个表,这个时候可以使用子查询</p>
+<p><code>SELECT of_dpt,COUNT(proj_name) AS count_project FROM project
+WHERE of_dpt IN
+(SELECT in_dpt FROM employee WHERE name=&#39;Tom&#39;);</code></p>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p>当处理多个表,并且结果来自不同的表的时候,使用 JOIN 操作,把多个表当作一个新的表进行操作</p>
+<p><code>SELECT id,name,people_num
+FROM employee,department
+WHERE employee.in_dpt = department.dpt_name
+ORDER BY id;</code></p>
+<p>或者使用 JOIN ON 语法</p>
+<p><code>SELECT id,name,people_num
+FROM employee JOIN department
+ON employee.in_dpt = department.dpt_name
+ORDER BY id;</code></p>
+<p><code>GROUP BY</code> 使用某一列的值作为唯一值进行组合,相同的项会被组合到一块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">inner join是指</div><div class="line">select * from a inner join b on a.aid = b.bid仅取出a,b匹配的数据</div><div class="line"></div><div class="line">left join 指:</div><div class="line">select * from a left join b on a.aid = b.bid</div><div class="line">首先取出a表中所有数据,然后再加上与a,b匹配的的数据</div><div class="line"></div><div class="line">right join</div><div class="line">指的是首先取出b表中所有数据,然后再加上与a,b匹配的的数据</div></pre></td></tr></table></figure>
+<h2 id="数据库和表的修改和删除"><a href="#数据库和表的修改和删除" class="headerlink" title="数据库和表的修改和删除"></a>数据库和表的修改和删除</h2><h3 id="对数据库的修改"><a href="#对数据库的修改" class="headerlink" title="对数据库的修改"></a>对数据库的修改</h3><p>删除数据库</p>
+<p><code>DROP DATABASE &lt;数据库名&gt;;</code></p>
+<h3 id="对一张表的修改"><a href="#对一张表的修改" class="headerlink" title="对一张表的修改"></a>对一张表的修改</h3><p>重命名一张表,三种命令格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">RENAME TABLE 原名 TO 新名字;</div><div class="line">ALTER TABLE 原名 RENAME 新名;</div><div class="line">ALTER TABLE 原名 RENAME TO 新名;</div></pre></td></tr></table></figure>
+<p>删除一张表</p>
+<p><code>DROP TABLE &lt;表名字&gt;;</code></p>
+<h3 id="对一列的修改-对表结构的修改"><a href="#对一列的修改-对表结构的修改" class="headerlink" title="对一列的修改(对表结构的修改)"></a>对一列的修改(对表结构的修改)</h3><p>增加一列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE 表名字 ADD COLUMN 列名字 数据类型 约束;</div><div class="line"></div><div class="line">或： ALTER TABLE 表名字 ADD 列名字 数据类型 约束;</div><div class="line"></div><div class="line"># 将新的列放在某一列的后面,使用关键词 AFTER</div><div class="line"></div><div class="line">ALTER TABLE 表名字 ADD COLUMN &lt;新列名字&gt; 数据类型 约束 **AFTER** &lt;某一列&gt;;</div><div class="line"></div><div class="line">放在第一列,在最后使用关键词 **FIRST**</div></pre></td></tr></table></figure>
+<p>删除一列,将 ADD 改为 DROP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ALTER TABLE 表名字 DROP COLUMN 列名字;</div><div class="line"></div><div class="line">或： ALTER TABLE 表名字 DROP 列名字;</div></pre></td></tr></table></figure>
+<p>重命名一列(修改一列),当原列名和新列名相同时,则只修改数据类型或约束或者位置</p>
+<p><code>ALTER TABLE 表名字 CHANGE 原列名 新列名 数据类型 约束;</code></p>
+<p>修改数据类型</p>
+<p><code>ALTER TABLE 表名字 MODIFY 列名字 新数据类型;</code></p>
+<h3 id="对表的内容修改"><a href="#对表的内容修改" class="headerlink" title="对表的内容修改"></a>对表的内容修改</h3><p>修改表中的某个值</p>
+<p><code>UPDATE 表名字 SET 列1=值1,列2=值2 WHERE 条件;</code></p>
+<p>删除一行记录</p>
+<p><code>DELETE FROM 表名字 WHERE 条件;</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-08-08-ss-shadowsocks-ubuntu-install-config.html" rel="next" title="在 Ubuntu 上部署 shaodowsocks, 并优化速度">
+                <i class="fa fa-chevron-left"></i> 在 Ubuntu 上部署 shaodowsocks, 并优化速度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="NingAnMe" />
+          <p class="site-author-name" itemprop="name">NingAnMe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ninganme" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-MySQL-服务端-核心程序"><span class="nav-number">1.1.</span> <span class="nav-text">安装 MySQL 服务端,核心程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-MySQL-客户端"><span class="nav-number">1.2.</span> <span class="nav-text">安装 MySQL 客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装结束以后-使用命令验证是否安装并且启动成功"><span class="nav-number">1.3.</span> <span class="nav-text">安装结束以后,使用命令验证是否安装并且启动成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以根据自己的需求，修改-MySQL-的配置文件（my-cnf）-使用以下命令"><span class="nav-number">1.4.</span> <span class="nav-text">可以根据自己的需求，修改 MySQL 的配置文件（my.cnf）,使用以下命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单使用"><span class="nav-number">2.</span> <span class="nav-text">简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开-MySQL"><span class="nav-number">2.1.</span> <span class="nav-text">打开 MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库"><span class="nav-number">2.2.</span> <span class="nav-text">查看数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接数据库"><span class="nav-number">2.3.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看表"><span class="nav-number">2.4.</span> <span class="nav-text">查看表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#退出"><span class="nav-number">2.5.</span> <span class="nav-text">退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建数据库"><span class="nav-number">2.6.</span> <span class="nav-text">新建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在数据库中新建一个表"><span class="nav-number">2.7.</span> <span class="nav-text">在数据库中新建一个表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建关联"><span class="nav-number">2.8.</span> <span class="nav-text">创建关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向表中插入数据"><span class="nav-number">2.9.</span> <span class="nav-text">向表中插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除数据库"><span class="nav-number">2.10.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表"><span class="nav-number">2.11.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载-sql-文件"><span class="nav-number">2.12.</span> <span class="nav-text">加载 sql 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-约束"><span class="nav-number">3.</span> <span class="nav-text">SQL 约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT语句详解"><span class="nav-number">4.</span> <span class="nav-text">SELECT语句详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本的SELECT语句"><span class="nav-number">4.1.</span> <span class="nav-text">基本的SELECT语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学符号条件"><span class="nav-number">4.2.</span> <span class="nav-text">数学符号条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑关系"><span class="nav-number">4.3.</span> <span class="nav-text">逻辑关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IN-和-NOT-IN"><span class="nav-number">4.4.</span> <span class="nav-text">IN 和 NOT IN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符"><span class="nav-number">4.5.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对结果进行排序"><span class="nav-number">4.6.</span> <span class="nav-text">对结果进行排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置函数和计算"><span class="nav-number">4.7.</span> <span class="nav-text">内置函数和计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询"><span class="nav-number">4.8.</span> <span class="nav-text">子查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接查询"><span class="nav-number">4.9.</span> <span class="nav-text">连接查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库和表的修改和删除"><span class="nav-number">5.</span> <span class="nav-text">数据库和表的修改和删除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对数据库的修改"><span class="nav-number">5.1.</span> <span class="nav-text">对数据库的修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对一张表的修改"><span class="nav-number">5.2.</span> <span class="nav-text">对一张表的修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对一列的修改-对表结构的修改"><span class="nav-number">5.3.</span> <span class="nav-text">对一列的修改(对表结构的修改)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对表的内容修改"><span class="nav-number">5.4.</span> <span class="nav-text">对表的内容修改</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NingAnMe</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
