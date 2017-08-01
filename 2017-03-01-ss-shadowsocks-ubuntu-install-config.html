@@ -93,17 +93,19 @@
 
 
 
-<meta name="description" content="安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh# 安装 Node.jsnvm install stable#">
+<meta name="description" content="需要掌握的基本技能 使用ssh工具连接Linux VPS进行相关操作。  了解ubuntu系统版本。  会vim的基本操作。   需要的资源 搬瓦工VPS一个，ubuntu 16.04版本。请购买KVM架构的VPS服务器版本。如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。  使用的服务 shadowsocks-libev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
-<meta property="og:url" content="http://yoursite.com/2017-05-15-hexo-github-pages.html">
+<meta property="og:title" content="在 Ubuntu 上部署 shaodowsocks, 并优化速度">
+<meta property="og:url" content="http://yoursite.com/2017-03-01-ss-shadowsocks-ubuntu-install-config.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh# 安装 Node.jsnvm install stable#">
+<meta property="og:description" content="需要掌握的基本技能 使用ssh工具连接Linux VPS进行相关操作。  了解ubuntu系统版本。  会vim的基本操作。   需要的资源 搬瓦工VPS一个，ubuntu 16.04版本。请购买KVM架构的VPS服务器版本。如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。  使用的服务 shadowsocks-libev">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-30T09:11:17.062Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4219173-fdf0de25e64faffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-08-01T13:10:50.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
-<meta name="twitter:description" content="安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh# 安装 Node.jsnvm install stable#">
+<meta name="twitter:title" content="在 Ubuntu 上部署 shaodowsocks, 并优化速度">
+<meta name="twitter:description" content="需要掌握的基本技能 使用ssh工具连接Linux VPS进行相关操作。  了解ubuntu系统版本。  会vim的基本操作。   需要的资源 搬瓦工VPS一个，ubuntu 16.04版本。请购买KVM架构的VPS服务器版本。如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。  使用的服务 shadowsocks-libev">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4219173-fdf0de25e64faffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017-05-15-hexo-github-pages.html"/>
+  <link rel="canonical" href="http://yoursite.com/2017-03-01-ss-shadowsocks-ubuntu-install-config.html"/>
 
 
 
 
 
-  <title>在 Github Pages 上面部署 Hexo,Unbuntu 操作环境 | NingAnMe</title>
+  <title>在 Ubuntu 上部署 shaodowsocks, 并优化速度 | NingAnMe</title>
   
 
 
@@ -266,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017-05-15-hexo-github-pages.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017-03-01-ss-shadowsocks-ubuntu-install-config.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -283,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">在 Github Pages 上面部署 Hexo,Unbuntu 操作环境</h1>
+          <h1 class="post-title" itemprop="name headline">在 Ubuntu 上部署 shaodowsocks, 并优化速度</h1>
         
 
         <div class="post-meta">
@@ -295,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T17:11:05+08:00">
-                2017-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T08:46:25+08:00">
+                2017-03-01
               </time>
             
 
@@ -330,19 +332,59 @@
       
 
       
-        <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>参考官方的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">安装指南</a>,期间遇到各种坑,能看懂英文的话,Google 都能解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 安装 Git</div><div class="line">sudo apt-get install git-core</div><div class="line"># 安装 nvm</div><div class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line"># 安装 Node.js</div><div class="line">nvm install stable</div><div class="line"># 使用 nvm 安装 Hexo</div><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<h2 id="本地建站"><a href="#本地建站" class="headerlink" title="本地建站"></a>本地建站</h2><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>安装完成后,就可以使用以下命令建站了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 使用 hexo 命令初始化一个文件夹,存放站点文件</div><div class="line">hexo init &lt;folder&gt;</div><div class="line"># 进入文件夹</div><div class="line">cd &lt;folder&gt;</div><div class="line"># 使用 npm 初始化网站(没有的话,自行安装 npm)</div><div class="line">npm install</div></pre></td></tr></table></figure>
-<p>hexo 站点的目录结构如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
-<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>存放了网站的配置信息</p>
-<h3 id="themes-文件夹"><a href="#themes-文件夹" class="headerlink" title="themes 文件夹"></a>themes 文件夹</h3><p>存放列网站的主题文件,主题文件自己也有一个 <code>_config.yml</code> 文件,用来存放主题自己的配置信息</p>
-<h3 id="source-文件夹"><a href="#source-文件夹" class="headerlink" title="source 文件夹"></a>source 文件夹</h3><p><code>_posts</code>文件内存放了需要在主页展示的文章,<code>_drafts</code>存放了草稿文件,其他需要放到 github pages 的文件也放到 source 文件内,如 images 文件</p>
-<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><p>首先进入网站文件夹内,然后执行下面的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 清理生成的静态文件和缓存</div><div class="line">hexo clean</div><div class="line"># 生成静态网站</div><div class="line">hexo g</div><div class="line"># 在本地启动web服务</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>然后就可以打开 <a href="https://localhost:4000" target="_blank" rel="external">https://localhost:4000</a> 在本地查看了</p>
-<p>如果生成的网站没有问题了,就可以将网站目录生成的 <code>public</code> 文件内的所有文件上传到你的 github pages 所在的源码仓库内,比如我的仓库名是 ninganme.github.io<br>,然后就可以打开 <a href="https://ninganme.github.io" target="_blank" rel="external">https://ninganme.github.io</a> 查看自己的页面了</p>
+        <h2 id="需要掌握的基本技能"><a href="#需要掌握的基本技能" class="headerlink" title="需要掌握的基本技能"></a>需要掌握的基本技能</h2><ul>
+<li><p>使用ssh工具连接Linux VPS进行相关操作。</p>
+</li>
+<li><p>了解ubuntu系统版本。</p>
+</li>
+<li><p>会vim的基本操作。</p>
+</li>
+</ul>
+<h2 id="需要的资源"><a href="#需要的资源" class="headerlink" title="需要的资源"></a>需要的资源</h2><ul>
+<li>搬瓦工VPS一个，ubuntu 16.04版本。<strong>请购买KVM架构的VPS服务器版本。</strong>如果不知道什么是KVM，百度查阅相关资料。否则到后面速度优化无法进行。不优化速度根本看不了 youtube 1080高清。</li>
+</ul>
+<h3 id="使用的服务"><a href="#使用的服务" class="headerlink" title="使用的服务"></a>使用的服务</h3><ul>
+<li><p>shadowsocks-libev 是 shadowsocks 服务的 C 语言重写版本，软件体积小，速度快，适合在小内存服务器中使用，如搬瓦工最便宜的服务器。</p>
+</li>
+<li><p>TCP BBR拥塞控制技术。目的是要尽量跑满带宽，可以明显加快ss服务的速度，看1080高清无压力，效果不比锐速差。</p>
+</li>
+</ul>
+<h3 id="优化速度，部署TCP-BBR"><a href="#优化速度，部署TCP-BBR" class="headerlink" title="优化速度，部署TCP BBR"></a>优化速度，部署TCP BBR</h3><p>只有 KVM 架构的 VPS 服务器才能更新 Linux 内核版本,上面提到了.</p>
+<p>通过ssh连接VPS，推荐使用Xshell。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4219173-fdf0de25e64faffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>连接后开始执行下面的命令。</p>
+<p>下载最新的 Linux 内核。因为只有内核版本在4.9版本以上才能开启 BBR 。</p>
+<p><code>wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.11/linux-image-4.11.0-041100-generic_4.11.0-041100.201705041534_amd64.deb</code></p>
+<p>安装最新内核</p>
+<p><code>dpkg -i linux-image-4.*.deb</code></p>
+<p>更新 grub 系统引导文件</p>
+<p><code>update-grub</code></p>
+<p>重启服务器</p>
+<p><code>reboot</code></p>
+<p>开机后执行 <code>uname -r</code> 命令看看是不是内核4.11版本。</p>
+<p>执行 <code>lsmod | grep bbr</code>，如果结果中没有 tcp_bbr 的话就依次执行下面五条命令</p>
+<figure class="highlight plain"><figcaption><span>tcp_bbr</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">echo &quot;tcp_bbr&quot; &gt;&gt; /etc/modules-load.d/modules.conf</div><div class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</div><div class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure>
+<p>执行下面两条命令查看结果中是否都有<em>bbr</em>，如果有的话，说明 tcp bbr 模块已经启动。</p>
+<figure class="highlight plain"><figcaption><span>net.ipv4.tcp_available_congestion_control</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl net.ipv4.tcp_congestion_control</div></pre></td></tr></table></figure>
+<h2 id="开始部署ss服务"><a href="#开始部署ss服务" class="headerlink" title="开始部署ss服务"></a>开始部署ss服务</h2><p>添加安装时使用的源</p>
+<p><code>sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev</code></p>
+<p>更新软件</p>
+<p><code>sudo apt-get update</code></p>
+<p>安装 shadowsocks-libev服务</p>
+<p><code>sudo apt install shadowsocks-libev</code></p>
+<p>到此为止，shadowsocks服务已经安装到VPS服务器当中了。</p>
+<p>下面要做的就是配置shadowsocks服务。</p>
+<p>安装vim编辑器</p>
+<p><code>sodu apt-get install vim</code></p>
+<p>打开shadowsocks配置文件</p>
+<p><code>sudo vim /etc/shadowsocks-libev/config.json</code></p>
+<p>打开后将下面的内容粘贴到这个文件中，然后修改相关内容后保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">     &quot;server&quot;:&quot;**修改为你的VPS地址，如101.22.33.204**&quot;,</div><div class="line">     &quot;server_port&quot;:8388,</div><div class="line">     &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">     &quot;local_port&quot;:1080,</div><div class="line">     &quot;password&quot;:&quot;**修改为你希望的连接密码，如ninganme**&quot;,</div><div class="line">     &quot;timeout&quot;:300,</div><div class="line">     &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">     &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其他的内容不需要修改，除非你知道是做什么的。例如 8388 是连接的时候远程服务器的端口号。</p>
+<p>然后打开 shadowsocks服务,并在后台运行,输完命令后敲一下回车。</p>
+<p><code>nohup ss-server -c /etc/shadowsocks-libev/config.json &amp;</code></p>
+<p>到此为止，shadowsocks服务已经在你的服务器部署完毕了，你可以使用手机或者电脑连接测试了。</p>
+<p>linux 系统使用 shadowsocks-qt5 连接,windows ios 和 安卓系统使用 shaodowsocks 连接</p>
 
       
     </div>
@@ -379,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-09-16-install-use-mysql.html" rel="next" title="MySQL 的安装和基本指令">
-                <i class="fa fa-chevron-left"></i> MySQL 的安装和基本指令
+              <a href="/2016-08-01-Sqlalchemy-basics.html" rel="next" title="SQLAlchemy 基础">
+                <i class="fa fa-chevron-left"></i> SQLAlchemy 基础
               </a>
             
           </div>
@@ -388,6 +430,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-07-15-hexo-github-pages.html" rel="prev" title="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
+                在 Github Pages 上面部署 Hexo,Unbuntu 操作环境 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -460,7 +506,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -510,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地建站"><span class="nav-number">2.</span> <span class="nav-text">本地建站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建站"><span class="nav-number">2.1.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml"><span class="nav-number">2.2.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">themes 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#source-文件夹"><span class="nav-number">2.4.</span> <span class="nav-text">source 文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成静态网站"><span class="nav-number">3.</span> <span class="nav-text">生成静态网站</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要掌握的基本技能"><span class="nav-number">1.</span> <span class="nav-text">需要掌握的基本技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要的资源"><span class="nav-number">2.</span> <span class="nav-text">需要的资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用的服务"><span class="nav-number">2.1.</span> <span class="nav-text">使用的服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化速度，部署TCP-BBR"><span class="nav-number">2.2.</span> <span class="nav-text">优化速度，部署TCP BBR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始部署ss服务"><span class="nav-number">3.</span> <span class="nav-text">开始部署ss服务</span></a></li></ol></div>
             
 
           </div>
