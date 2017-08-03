@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="NingAnMe, Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="开始代码风格123456使用 4 个空格来缩进永远不要混用空格和制表符在函数之间空一行在类之间空两行字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4) 模块模块是包含了我们能复用的代码的文件，包含了不同的函数定义，变量。模块文件通常以 .py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 基础补充">
+<meta property="og:url" content="http://yoursite.com/2016-07-05-python-bascis-supplement.html">
+<meta property="og:site_name" content="NingAnMe">
+<meta property="og:description" content="开始代码风格123456使用 4 个空格来缩进永远不要混用空格和制表符在函数之间空一行在类之间空两行字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4) 模块模块是包含了我们能复用的代码的文件，包含了不同的函数定义，变量。模块文件通常以 .py">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-03T03:05:52.373Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 基础补充">
+<meta name="twitter:description" content="开始代码风格123456使用 4 个空格来缩进永远不要混用空格和制表符在函数之间空一行在类之间空两行字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4) 模块模块是包含了我们能复用的代码的文件，包含了不同的函数定义，变量。模块文件通常以 .py">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-07-05-python-bascis-supplement.html"/>
+
+
+
+
+
+  <title>Python 基础补充 | NingAnMe</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">NingAnMe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-github">
+          <a href="https://github.com/ninganme" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-github"></i> <br />
+            
+            GitHub
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cv">
+          <a href="/cv/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-05-python-bascis-supplement.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 基础补充</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-05T10:17:18+08:00">
+                2016-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">使用 4 个空格来缩进</div><div class="line">永远不要混用空格和制表符</div><div class="line">在函数之间空一行</div><div class="line">在类之间空两行</div><div class="line">字典，列表，元组以及参数列表中，在 , 后添加一个空格。对于字典，: 后面也添加一个空格</div><div class="line">在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里侧不加空格：a = f(1, 2) + g(3, 4)</div></pre></td></tr></table></figure>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>模块是包含了我们能复用的代码的文件，包含了不同的函数定义，变量。模块文件通常以 .py 为扩展名</p>
+<h2 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h2><h3 id="关键字和标识符"><a href="#关键字和标识符" class="headerlink" title="关键字和标识符"></a>关键字和标识符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">False               def                 if                  raise</div><div class="line">None                del                 import              return</div><div class="line">True                elif                in                  try</div><div class="line">and                 else                is                  while</div><div class="line">as                  except              lambda              with</div><div class="line">assert              finally             nonlocal            yield</div><div class="line">break               for                 not                 </div><div class="line">class               from                or                  </div><div class="line">continue            global              pass</div></pre></td></tr></table></figure>
+<h3 id="单行定义多个变量或赋值"><a href="#单行定义多个变量或赋值" class="headerlink" title="单行定义多个变量或赋值"></a>单行定义多个变量或赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a , b = 45, 54</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 我们是用逗号创建元组。在赋值语句的右边我们创建了一个元组，我们称这为元组封装（tuple packing），赋值语句的左边我们则做的是元组拆封 （tuple unpacking）。</div><div class="line">&gt;&gt;&gt; data = (&quot;shiyanlou&quot;, &quot;China&quot;, &quot;Python&quot;)</div><div class="line">&gt;&gt;&gt; name, country, language = data</div></pre></td></tr></table></figure>
+<h2 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h2><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>如果进行正除,使用 <code>//</code> 运算符,求余数用 <code>%</code></p>
+<p>divmod(num1, num2) 返回一个元组，这个元组包含两个值，第一个是 num1 和 num2 相整除得到的值，第二个是 num1 和 num2 求余得到的值，然后我们用 * 运算符拆封这个元组，得到这两个值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python3</div><div class="line">days = int(input(&quot;Enter days: &quot;))</div><div class="line">print(&quot;Months = &#123;&#125; Days = &#123;&#125;&quot;.format(*divmod(days, 30)))</div></pre></td></tr></table></figure>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算符 and 和 or 也称作短路运算符:短路运算符的返回值通常是能够最先确定结果的那个操作数。</p>
+<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><p>书写表达式的时候应该在运算符的左右各放一个空格</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>float(), int(), str(),三种基本数据类型的转换</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>默认情况下，print() 除了打印你提供的字符串之外，还会打印一个换行符，所以每调用一次 print() 就会换一次行，如同上面一样。</p>
+<p>可以使用 print() 的另一个参数 end,来替换这个换行符</p>
+<p><code>print(a, end&#39; &#39;) # 将换行符换为空格</code></p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>list的 count() 方法可以返回列表中有多少个 x 元素</p>
+<p>list 的 revberse() 方法可以反转整个列表</p>
+<p>list 的 extend() 方法将一个列表的元素添加到 list 的末尾</p>
+<p>list 的 sort() 方法将列表的元素进行排序</p>
+<p>del 关键字可以删除指定位置的列表元素,remove() 方法也可以</p>
+<p>pop()。传入一个参数 i 即 pop(i) 会将第 i 个元素弹出,默认是最后一个</p>
+<p>列表推导式也可以嵌套</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; z = [x + 1 for x in [x ** 2 for x in a]]</div><div class="line">&gt;&gt;&gt; z</div><div class="line">[2, 5, 10]</div></pre></td></tr></table></figure>
+<h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><p>参考 2.7</p>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。集合对象还支持 union（联合），intersection（交），difference（差）和 symmetric difference（对称差集）等数学运算。</p>
+<p>大括号或 set() 函数可以用来创建集合。想要创建空集合，你必须使用 set() 而不是 {}。</p>
+<p>集合的操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; # 演示对两个单词中的字母进行集合操作</div><div class="line">...</div><div class="line">&gt;&gt;&gt; a = set(&apos;abracadabra&apos;)</div><div class="line">&gt;&gt;&gt; b = set(&apos;alacazam&apos;)</div><div class="line">&gt;&gt;&gt; a                                  # a 去重后的字母</div><div class="line">&#123;&apos;a&apos;, &apos;r&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;&#125;</div><div class="line">&gt;&gt;&gt; a - b                              # a 有而 b 没有的字母</div><div class="line">&#123;&apos;r&apos;, &apos;d&apos;, &apos;b&apos;&#125;</div><div class="line">&gt;&gt;&gt; a | b                              # 存在于 a 或 b 的字母</div><div class="line">&#123;&apos;a&apos;, &apos;c&apos;, &apos;r&apos;, &apos;d&apos;, &apos;b&apos;, &apos;m&apos;, &apos;z&apos;, &apos;l&apos;&#125;</div><div class="line">&gt;&gt;&gt; a &amp; b                              # a 和 b 都有的字母</div><div class="line">&#123;&apos;a&apos;, &apos;c&apos;&#125;</div><div class="line">&gt;&gt;&gt; a ^ b                              # 存在于 a 或 b 但不同时存在的字母</div><div class="line">&#123;&apos;r&apos;, &apos;d&apos;, &apos;b&apos;, &apos;m&apos;, &apos;z&apos;, &apos;l&apos;&#125;</div></pre></td></tr></table></figure>
+<p>从集合中添加或弹出元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = &#123;&apos;a&apos;,&apos;e&apos;,&apos;h&apos;,&apos;g&apos;&#125;</div><div class="line">&gt;&gt;&gt; a.pop()</div><div class="line">&apos;h&apos;</div><div class="line">&gt;&gt;&gt; a.add(&apos;c&apos;)</div><div class="line">&gt;&gt;&gt; a</div><div class="line">&#123;&apos;c&apos;, &apos;e&apos;, &apos;g&apos;, &apos;a&apos;&#125;</div></pre></td></tr></table></figure>
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>许多时候我们需要往字典中的元素添加数据，我们首先要判断这个元素是否存在，不存在则创建一个默认值。如果在循环里执行这个操作，每次迭代都需要判断一次，降低程序性能。</p>
+<p>我们可以使用 dict.setdefault(key, default) 更有效率的完成这个事情。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; data = &#123;&#125;</div><div class="line">&gt;&gt;&gt; data.setdefault(&apos;names&apos;, []).append(&apos;Ruby&apos;)</div><div class="line">&gt;&gt;&gt; data</div><div class="line">&#123;&apos;names&apos;: [&apos;Ruby&apos;]&#125;</div><div class="line">&gt;&gt;&gt; data.setdefault(&apos;names&apos;, []).append(&apos;Python&apos;)</div><div class="line">&gt;&gt;&gt; data</div><div class="line">&#123;&apos;names&apos;: [&apos;Ruby&apos;, &apos;Python&apos;]&#125;</div><div class="line">&gt;&gt;&gt; data.setdefault(&apos;names&apos;, []).append(&apos;C&apos;)</div><div class="line">&gt;&gt;&gt; data</div><div class="line">&#123;&apos;names&apos;: [&apos;Ruby&apos;, &apos;Python&apos;, &apos;C&apos;]&#125;</div></pre></td></tr></table></figure>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>方法 title() 返回字符串的标题版本，即单词首字母大写其余字母小写。</p>
+<p>方法 upper() 返回字符串全部大写的版本，反之 lower() 返回字符串的全部小写版本。</p>
+<p>方法 swapcase() 返回字符串大小写交换后的版本 :）</p>
+<p>方法 isalnum() 检查所有字符是否为字母数字，上面的代码中第一行的字符串 s 中包含空格字符，所以返回 False。</p>
+<p>方法 isalpha() 检查字符串之中是否只有字母。</p>
+<p>我们可以使用 split() 分割任意字符串，split() 允许有一个参数，用来指定字符串以什么字符分隔（默认为 “ “），它返回一个包含所有分割后的字符串的列表。</p>
+<p>相反的，方法 join() 使用指定字符连接多个字符串，它需要一个包含字符串元素的列表作为输入然后连接列表内的字符串元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &quot;-&quot;.join(&quot;GNU/Linux is great&quot;.split())</div><div class="line">&apos;GNU/Linux-is-great&apos;</div></pre></td></tr></table></figure>
+<h3 id="字符串剥离"><a href="#字符串剥离" class="headerlink" title="字符串剥离"></a>字符串剥离</h3><p>最简单的一个是 strip(chars)，用来剥离字符串首尾中指定的字符，它允许有一个字符串参数，这个参数为剥离哪些字符提供依据。默认是空格和换行符</p>
+<p>可以使用 lstrip(chars) 或 rstrip(chars) 只对字符串左或右剥离。</p>
+<h3 id="文本搜索"><a href="#文本搜索" class="headerlink" title="文本搜索"></a>文本搜索</h3><p>find() 能帮助你找到第一个匹配的子字符串，没有找到则返回 -1。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s = &quot;faulty for a reason&quot;</div><div class="line">&gt;&gt;&gt; s.find(&quot;for&quot;)</div><div class="line">7</div><div class="line">&gt;&gt;&gt; s.find(&quot;fora&quot;)</div><div class="line">-1</div><div class="line">&gt;&gt;&gt; s.startswith(&quot;fa&quot;) # 检查字符串是否以 fa 开头</div><div class="line">True</div><div class="line">&gt;&gt;&gt; s.endswith(&quot;reason&quot;) # 检查字符串是否以 reason 结尾</div><div class="line">True</div></pre></td></tr></table></figure>
+<h3 id="回文检查"><a href="#回文检查" class="headerlink" title="回文检查"></a>回文检查</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">s = input(&quot;Please enter a string: &quot;)</div><div class="line">z = s[::-1]</div><div class="line">if s == z:</div><div class="line">    print(&quot;The string is a palindrome&quot;)</div><div class="line">else:</div><div class="line">    print(&quot;The string is not a palindrome&quot;)</div></pre></td></tr></table></figure>
+<h3 id="单词计数"><a href="#单词计数" class="headerlink" title="单词计数"></a>单词计数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python3</div><div class="line">s = input(&quot;Enter a line: &quot;)</div><div class="line">print(&quot;The number of words in the line are %d&quot; % (len(s.split(&quot; &quot;))))</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-07-02-python-basics.html" rel="next" title="Python 基础">
+                <i class="fa fa-chevron-left"></i> Python 基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-07-05-python-advanced.html" rel="prev" title="Python 进阶">
+                Python 进阶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="NingAnMe" />
+          <p class="site-author-name" itemprop="name">NingAnMe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ninganme" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码风格"><span class="nav-number">1.1.</span> <span class="nav-text">代码风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">1.2.</span> <span class="nav-text">模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">2.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字和标识符"><span class="nav-number">2.1.</span> <span class="nav-text">关键字和标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单行定义多个变量或赋值"><span class="nav-number">2.2.</span> <span class="nav-text">单行定义多个变量或赋值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和表达式"><span class="nav-number">3.</span> <span class="nav-text">运算符和表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">3.2.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式"><span class="nav-number">3.3.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">3.4.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">4.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">5.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">5.1.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元组"><span class="nav-number">5.2.</span> <span class="nav-text">元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合"><span class="nav-number">5.3.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">5.4.</span> <span class="nav-text">字典</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">6.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串剥离"><span class="nav-number">6.1.</span> <span class="nav-text">字符串剥离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本搜索"><span class="nav-number">6.2.</span> <span class="nav-text">文本搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回文检查"><span class="nav-number">6.3.</span> <span class="nav-text">回文检查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单词计数"><span class="nav-number">6.4.</span> <span class="nav-text">单词计数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NingAnMe</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
