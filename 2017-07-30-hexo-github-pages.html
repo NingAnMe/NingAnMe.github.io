@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
+<meta name="description" content="想把 blog 里面的文章移到 github pages 上面,这样就不用一直担心服务器的维护了,然后写下了这篇日志记录一下安装的过程 安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
-<meta property="og:url" content="http://yoursite.com/2016-07-17-vim-nonsupport-python.html">
+<meta property="og:title" content="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
+<meta property="og:url" content="http://ninganme.github.io/2017-07-30-hexo-github-pages.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
+<meta property="og:description" content="想把 blog 里面的文章移到 github pages 上面,这样就不用一直担心服务器的维护了,然后写下了这篇日志记录一下安装的过程 安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T10:54:31.364Z">
+<meta property="og:updated_time" content="2017-08-12T04:57:48.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
-<meta name="twitter:description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
+<meta name="twitter:title" content="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
+<meta name="twitter:description" content="想把 blog 里面的文章移到 github pages 上面,这样就不用一直担心服务器的维护了,然后写下了这篇日志记录一下安装的过程 安装 Hexo参考官方的安装指南,期间遇到各种坑,能看懂英文的话,Google 都能解决 12345678# 安装 Gitsudo apt-get install git-core# 安装 nvmwget -qO- https://raw.github.com/c">
 
 
 
@@ -123,7 +123,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":50},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016-07-17-vim-nonsupport-python.html"/>
+  <link rel="canonical" href="http://ninganme.github.io/2017-07-30-hexo-github-pages.html"/>
 
 
 
 
 
-  <title>VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本 | NingAnMe</title>
+  <title>在 Github Pages 上面部署 Hexo,Unbuntu 操作环境 | NingAnMe</title>
   
 
 
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-17-vim-nonsupport-python.html">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-07-30-hexo-github-pages.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本</h1>
+          <h1 class="post-title" itemprop="name headline">在 Github Pages 上面部署 Hexo,Unbuntu 操作环境</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-17T10:46:25+08:00">
-                2016-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T17:11:05+08:00">
+                2017-07-30
               </time>
             
 
@@ -330,16 +330,20 @@
       
 
       
-        <h3 id="检查-vim-是不是支持-Python"><a href="#检查-vim-是不是支持-Python" class="headerlink" title="检查 vim 是不是支持 Python"></a>检查 vim 是不是支持 Python</h3><p><code>anning@NingAnMe:~$ vim --version | grep python</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">结果如下</div><div class="line"></div><div class="line">+cryptv          +linebreak       **-python**          +vreplace</div><div class="line">+cscope          +lispindent      **+python3**         +wildignore</div><div class="line">链接方式: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm</div></pre></td></tr></table></figure>
-<p>支持 python3 ，不支持 python2</p>
-<h3 id="卸载安装的-vim"><a href="#卸载安装的-vim" class="headerlink" title="卸载安装的 vim"></a>卸载安装的 vim</h3><p><code>$ dpkg -l | grep vim</code></p>
-<p>根据上面显示的内容进行卸载</p>
-<p><code>$ sudo dpkg -P vim vim-common vim-runtime vim-tiny</code></p>
-<h3 id="安装依赖库"><a href="#安装依赖库" class="headerlink" title="安装依赖库"></a>安装依赖库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \</div><div class="line">    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \</div><div class="line">    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \</div><div class="line">    python3-dev ruby-dev lua5.1 lua5.1-dev git</div></pre></td></tr></table></figure>
-<h3 id="下载最新的-vim"><a href="#下载最新的-vim" class="headerlink" title="下载最新的 vim"></a>下载最新的 vim</h3><p><code>$ git clone https://github.com/vim/vim.git</code></p>
-<h3 id="编译安装最新的-vim"><a href="#编译安装最新的-vim" class="headerlink" title="编译安装最新的 vim"></a>编译安装最新的 vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cd vim</div><div class="line"></div><div class="line">./configure --with-features=huge \</div><div class="line">            --enable-multibyte \</div><div class="line">            --enable-rubyinterp \</div><div class="line">            --enable-pythoninterp \</div><div class="line">            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \</div><div class="line">            --enable-perlinterp \</div><div class="line">            --enable-luainterp \</div><div class="line">            --enable-gui=gtk2 --enable-cscope --prefix=/usr</div><div class="line"></div><div class="line">make VIMRUNTIMEDIR=/usr/share/vim/vim80</div><div class="line"></div><div class="line">sudo make install</div></pre></td></tr></table></figure>
-<h3 id="将vim设置为默认编辑器"><a href="#将vim设置为默认编辑器" class="headerlink" title="将vim设置为默认编辑器"></a>将vim设置为默认编辑器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set editor /usr/bin/vim</div><div class="line"></div><div class="line">sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set vi /usr/bin/vim</div></pre></td></tr></table></figure>
+        <p>想把 blog 里面的文章移到 github pages 上面,这样就不用一直担心服务器的维护了,然后写下了这篇日志记录一下安装的过程</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>参考官方的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">安装指南</a>,期间遇到各种坑,能看懂英文的话,Google 都能解决</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 安装 Git</div><div class="line">sudo apt-get install git-core</div><div class="line"># 安装 nvm</div><div class="line">wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div><div class="line"># 安装 Node.js</div><div class="line">nvm install stable</div><div class="line"># 使用 nvm 安装 Hexo</div><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<h2 id="本地建站"><a href="#本地建站" class="headerlink" title="本地建站"></a>本地建站</h2><h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>安装完成后,就可以使用以下命令建站了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 使用 hexo 命令初始化一个文件夹,存放站点文件</div><div class="line">hexo init &lt;folder&gt;</div><div class="line"># 进入文件夹</div><div class="line">cd &lt;folder&gt;</div><div class="line"># 使用 npm 初始化网站(没有的话,自行安装 npm)</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>hexo 站点的目录结构如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>存放了网站的配置信息</p>
+<h3 id="themes-文件夹"><a href="#themes-文件夹" class="headerlink" title="themes 文件夹"></a>themes 文件夹</h3><p>存放列网站的主题文件,主题文件自己也有一个 <code>_config.yml</code> 文件,用来存放主题自己的配置信息</p>
+<h3 id="source-文件夹"><a href="#source-文件夹" class="headerlink" title="source 文件夹"></a>source 文件夹</h3><p><code>_posts</code>文件内存放了需要在主页展示的文章,<code>_drafts</code>存放了草稿文件,其他需要放到 github pages 的文件也放到 source 文件内,如 images 文件</p>
+<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><p>首先进入网站文件夹内,然后执行下面的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 清理生成的静态文件和缓存</div><div class="line">hexo clean</div><div class="line"># 生成静态网站</div><div class="line">hexo g</div><div class="line"># 在本地启动web服务</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p>然后就可以打开 <a href="https://localhost:4000" target="_blank" rel="external">https://localhost:4000</a> 在本地查看了</p>
+<p>如果生成的网站没有问题了,就可以将网站目录生成的 <code>public</code> 文件内的所有文件上传到你的 github pages 所在的源码仓库内,比如我的仓库名是 ninganme.github.io<br>,然后就可以打开 <a href="https://ninganme.github.io">https://ninganme.github.io</a> 查看自己的页面了</p>
 
       
     </div>
@@ -361,6 +365,21 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-07-30-hexo-github-pages.html" title="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">http://ninganme.github.io/2017-07-30-hexo-github-pages.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -376,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-07-10-ubuntu-python-environment.html" rel="next" title="Ubuntu 系统上详细配置 Python 工作学习一体化环境">
-                <i class="fa fa-chevron-left"></i> Ubuntu 系统上详细配置 Python 工作学习一体化环境
+              <a href="/2017-07-27-python-error-exception.html" rel="next" title="Python 错误和异常">
+                <i class="fa fa-chevron-left"></i> Python 错误和异常
               </a>
             
           </div>
@@ -386,8 +405,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016-07-17-install-oh-my-zsh.html" rel="prev" title="安装 oh-my-zsh">
-                安装 oh-my-zsh <i class="fa fa-chevron-right"></i>
+              <a href="/2017-08-01-mysql-basic-advanced.html" rel="prev" title="MySQL 的安装和基本指令">
+                MySQL 的安装和基本指令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -461,7 +480,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -511,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查-vim-是不是支持-Python"><span class="nav-number">1.</span> <span class="nav-text">检查 vim 是不是支持 Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载安装的-vim"><span class="nav-number">2.</span> <span class="nav-text">卸载安装的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖库"><span class="nav-number">3.</span> <span class="nav-text">安装依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新的-vim"><span class="nav-number">4.</span> <span class="nav-text">下载最新的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装最新的-vim"><span class="nav-number">5.</span> <span class="nav-text">编译安装最新的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将vim设置为默认编辑器"><span class="nav-number">6.</span> <span class="nav-text">将vim设置为默认编辑器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地建站"><span class="nav-number">2.</span> <span class="nav-text">本地建站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建站"><span class="nav-number">2.1.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml"><span class="nav-number">2.2.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-文件夹"><span class="nav-number">2.3.</span> <span class="nav-text">themes 文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#source-文件夹"><span class="nav-number">2.4.</span> <span class="nav-text">source 文件夹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成静态网站"><span class="nav-number">3.</span> <span class="nav-text">生成静态网站</span></a></li></ol></div>
             
 
           </div>

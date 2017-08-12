@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="下载oh-my-zsh12marsloo@mars-Ideapad-V460:~$ sudo apt-get updatemarsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y 用 wget 安装sh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-z">
+<meta name="description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装 oh-my-zsh">
-<meta property="og:url" content="http://yoursite.com/2016-07-17-install-oh-my-zsh.html">
+<meta property="og:title" content="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
+<meta property="og:url" content="http://ninganme.github.io/2017-07-08-vim-nonsupport-python.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="下载oh-my-zsh12marsloo@mars-Ideapad-V460:~$ sudo apt-get updatemarsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y 用 wget 安装sh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-z">
+<meta property="og:description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T10:54:38.576Z">
+<meta property="og:updated_time" content="2017-08-12T04:58:41.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装 oh-my-zsh">
-<meta name="twitter:description" content="下载oh-my-zsh12marsloo@mars-Ideapad-V460:~$ sudo apt-get updatemarsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y 用 wget 安装sh -c &amp;quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-z">
+<meta name="twitter:title" content="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
+<meta name="twitter:description" content="检查 vim 是不是支持 Pythonanning@NingAnMe:~$ vim --version | grep python 12345结果如下+cryptv          +linebreak       **-python**          +vreplace+cscope          +lispindent      **+python3**         +wildi">
 
 
 
@@ -123,7 +123,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":50},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016-07-17-install-oh-my-zsh.html"/>
+  <link rel="canonical" href="http://ninganme.github.io/2017-07-08-vim-nonsupport-python.html"/>
 
 
 
 
 
-  <title>安装 oh-my-zsh | NingAnMe</title>
+  <title>VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本 | NingAnMe</title>
   
 
 
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-17-install-oh-my-zsh.html">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-07-08-vim-nonsupport-python.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安装 oh-my-zsh</h1>
+          <h1 class="post-title" itemprop="name headline">VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-17T20:46:25+08:00">
-                2016-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T10:46:25+08:00">
+                2017-07-08
               </time>
             
 
@@ -330,13 +330,16 @@
       
 
       
-        <h3 id="下载oh-my-zsh"><a href="#下载oh-my-zsh" class="headerlink" title="下载oh-my-zsh"></a>下载oh-my-zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">marsloo@mars-Ideapad-V460:~$ sudo apt-get update</div><div class="line">marsloo@mars-Ideapad-V460:~$ sudo apt-get install zsh -y</div></pre></td></tr></table></figure>
-<h3 id="用-wget-安装"><a href="#用-wget-安装" class="headerlink" title="用 wget 安装"></a>用 wget 安装</h3><p><code>sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</code></p>
-<h3 id="oh-my-zsh的github介绍"><a href="#oh-my-zsh的github介绍" class="headerlink" title="oh-my-zsh的github介绍"></a>oh-my-zsh的github介绍</h3><p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki" target="_blank" rel="external">oh-my-zsh-github</a></p>
-<h3 id="h-my-zsh的配置在-zshrc文件中"><a href="#h-my-zsh的配置在-zshrc文件中" class="headerlink" title="h-my-zsh的配置在~/.zshrc文件中"></a>h-my-zsh的配置在~/.zshrc文件中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">export ZSH=$HOME/.oh-my-zsh</div><div class="line">ZSH_THEME=&quot;gnzh&quot;</div><div class="line">DISABLE_UPDATE_PROMPT=true</div><div class="line">plugins=(git autojump sudo httpie colored-man-pages)</div><div class="line">source $ZSH/oh-my-zsh.sh</div><div class="line">export LANG=en_US.UTF-8</div><div class="line">export LC_ALL=en_US.UTF-8</div><div class="line"># Aliases configuration</div><div class="line">alias ll=&apos;ls -lrth&apos;</div><div class="line">alias la=&apos;ls -lrtha&apos;</div><div class="line">alias grep=&quot;grep --color=auto&quot;</div><div class="line">alias vi=&apos;vim&apos;</div><div class="line">alias mysql=&apos;/usr/local/mysql/bin/mysql&apos;</div><div class="line">alias mysqladm=&apos;/usr/local/mysql/bin/mysqladmin&apos;</div><div class="line">alias mysqld=&apos;/usr/local/mysql/bin/mysqld&apos;</div><div class="line">alias -s c=vim</div><div class="line">alias -s txt=vim</div><div class="line">alias -s gz=&apos;tar -xzvf&apos;</div><div class="line">alias -s tgz=&apos;tar -xzvf&apos;</div><div class="line">alias -s zip=&apos;unzip&apos;</div><div class="line">alias -s bz2=&apos;tar -xjvf&apos;</div><div class="line">alias -s jpg=&apos;imgcat&apos;</div><div class="line">alias -s gif=&apos;imgcat&apos;</div><div class="line">alias -s png=&apos;imgcat&apos;</div><div class="line"></div><div class="line">export PROJECT_HOME=$HOME/learnspace</div><div class="line">export WORKON_HOME=$HOME/Envs</div><div class="line">if [ ! -d $PROJECT_HOME ]; then</div><div class="line">    mkdir -p $PROJECT_HOME</div><div class="line">fi</div><div class="line">if [ ! -d $WORKON_HOME ]; then</div><div class="line">    mkdir -p $WORKON_HOME</div><div class="line">fi</div><div class="line">#Virtualenvwrapper</div><div class="line">#source /usr/local/bin/virtualenvwrapper.sh</div><div class="line">#source ~/.iterm2_shell_integration.`basename $SHELL`</div><div class="line"></div><div class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</div><div class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="external">主题</a></p>
-<h3 id="把Zsh设置为当前用户的默认Shell"><a href="#把Zsh设置为当前用户的默认Shell" class="headerlink" title="把Zsh设置为当前用户的默认Shell"></a>把Zsh设置为当前用户的默认Shell</h3><p><code>chsh -s /bin/zsh</code></p>
-<h3 id="重启一下电脑"><a href="#重启一下电脑" class="headerlink" title="重启一下电脑"></a>重启一下电脑</h3><p><code>reboot</code></p>
+        <h3 id="检查-vim-是不是支持-Python"><a href="#检查-vim-是不是支持-Python" class="headerlink" title="检查 vim 是不是支持 Python"></a>检查 vim 是不是支持 Python</h3><p><code>anning@NingAnMe:~$ vim --version | grep python</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">结果如下</div><div class="line"></div><div class="line">+cryptv          +linebreak       **-python**          +vreplace</div><div class="line">+cscope          +lispindent      **+python3**         +wildignore</div><div class="line">链接方式: gcc   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -o vim        -lm -ltinfo -lnsl  -lselinux  -lacl -lattr -lgpm -ldl     -L/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu -lpython3.5m -lpthread -ldl -lutil -lm</div></pre></td></tr></table></figure>
+<p>支持 python3 ，不支持 python2</p>
+<h3 id="卸载安装的-vim"><a href="#卸载安装的-vim" class="headerlink" title="卸载安装的 vim"></a>卸载安装的 vim</h3><p><code>$ dpkg -l | grep vim</code></p>
+<p>根据上面显示的内容进行卸载</p>
+<p><code>$ sudo dpkg -P vim vim-common vim-runtime vim-tiny</code></p>
+<h3 id="安装依赖库"><a href="#安装依赖库" class="headerlink" title="安装依赖库"></a>安装依赖库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \</div><div class="line">    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \</div><div class="line">    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \</div><div class="line">    python3-dev ruby-dev lua5.1 lua5.1-dev git</div></pre></td></tr></table></figure>
+<h3 id="下载最新的-vim"><a href="#下载最新的-vim" class="headerlink" title="下载最新的 vim"></a>下载最新的 vim</h3><p><code>$ git clone https://github.com/vim/vim.git</code></p>
+<h3 id="编译安装最新的-vim"><a href="#编译安装最新的-vim" class="headerlink" title="编译安装最新的 vim"></a>编译安装最新的 vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">cd vim</div><div class="line"></div><div class="line">./configure --with-features=huge \</div><div class="line">            --enable-multibyte \</div><div class="line">            --enable-rubyinterp \</div><div class="line">            --enable-pythoninterp \</div><div class="line">            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \</div><div class="line">            --enable-perlinterp \</div><div class="line">            --enable-luainterp \</div><div class="line">            --enable-gui=gtk2 --enable-cscope --prefix=/usr</div><div class="line"></div><div class="line">make VIMRUNTIMEDIR=/usr/share/vim/vim80</div><div class="line"></div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<h3 id="将vim设置为默认编辑器"><a href="#将vim设置为默认编辑器" class="headerlink" title="将vim设置为默认编辑器"></a>将vim设置为默认编辑器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set editor /usr/bin/vim</div><div class="line"></div><div class="line">sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1</div><div class="line"></div><div class="line">sudo update-alternatives --set vi /usr/bin/vim</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -358,6 +361,21 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-07-08-vim-nonsupport-python.html" title="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">http://ninganme.github.io/2017-07-08-vim-nonsupport-python.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -373,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-07-17-vim-nonsupport-python.html" rel="next" title="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
-                <i class="fa fa-chevron-left"></i> VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本
+              <a href="/2017-07-07-linux-basic.html" rel="next" title="Linux 基础入门">
+                <i class="fa fa-chevron-left"></i> Linux 基础入门
               </a>
             
           </div>
@@ -383,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016-08-01-django-install-and-elementary.html" rel="prev" title="Django 的安装和入门">
-                Django 的安装和入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-07-08-install-oh-my-zsh.html" rel="prev" title="安装 oh-my-zsh">
+                安装 oh-my-zsh <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -458,7 +476,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -508,7 +526,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载oh-my-zsh"><span class="nav-number">1.</span> <span class="nav-text">下载oh-my-zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-wget-安装"><span class="nav-number">2.</span> <span class="nav-text">用 wget 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oh-my-zsh的github介绍"><span class="nav-number">3.</span> <span class="nav-text">oh-my-zsh的github介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#h-my-zsh的配置在-zshrc文件中"><span class="nav-number">4.</span> <span class="nav-text">h-my-zsh的配置在~/.zshrc文件中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把Zsh设置为当前用户的默认Shell"><span class="nav-number">5.</span> <span class="nav-text">把Zsh设置为当前用户的默认Shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启一下电脑"><span class="nav-number">6.</span> <span class="nav-text">重启一下电脑</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查-vim-是不是支持-Python"><span class="nav-number">1.</span> <span class="nav-text">检查 vim 是不是支持 Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载安装的-vim"><span class="nav-number">2.</span> <span class="nav-text">卸载安装的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖库"><span class="nav-number">3.</span> <span class="nav-text">安装依赖库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载最新的-vim"><span class="nav-number">4.</span> <span class="nav-text">下载最新的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装最新的-vim"><span class="nav-number">5.</span> <span class="nav-text">编译安装最新的 vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将vim设置为默认编辑器"><span class="nav-number">6.</span> <span class="nav-text">将vim设置为默认编辑器</span></a></li></ol></div>
             
 
           </div>

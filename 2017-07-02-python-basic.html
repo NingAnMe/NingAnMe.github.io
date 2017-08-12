@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10^9就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5 字符串 字符串是以’’或””括起来的任意文本 布尔值 布尔值和">
+<meta name="description" content="内容 变量和数据类型 print语句 注释 字符串 数据类型 list和tuple 条件判断和循环 dict和set 函数 切片 迭代 列表生成式  变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 基础">
-<meta property="og:url" content="http://yoursite.com/2016-07-02-python-basics.html">
+<meta property="og:url" content="http://ninganme.github.io/2017-07-02-python-basic.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10^9就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5 字符串 字符串是以’’或””括起来的任意文本 布尔值 布尔值和">
+<meta property="og:description" content="内容 变量和数据类型 print语句 注释 字符串 数据类型 list和tuple 条件判断和循环 dict和set 函数 切片 迭代 列表生成式  变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T03:06:10.009Z">
+<meta property="og:updated_time" content="2017-08-12T03:51:13.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 基础">
-<meta name="twitter:description" content="变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10^9就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5 字符串 字符串是以’’或””括起来的任意文本 布尔值 布尔值和">
+<meta name="twitter:description" content="内容 变量和数据类型 print语句 注释 字符串 数据类型 list和tuple 条件判断和循环 dict和set 函数 切片 迭代 列表生成式  变量和数据类型数据类型整数 十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2 浮点数 点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.">
 
 
 
@@ -123,7 +123,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":50},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016-07-02-python-basics.html"/>
+  <link rel="canonical" href="http://ninganme.github.io/2017-07-02-python-basic.html"/>
 
 
 
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-02-python-basics.html">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-07-02-python-basic.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-02T10:17:18+08:00">
-                2016-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T08:17:18+08:00">
+                2017-07-02
               </time>
             
 
@@ -330,7 +330,21 @@
       
 
       
-        <h2 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>整数</p>
+        <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>变量和数据类型</li>
+<li>print语句</li>
+<li>注释</li>
+<li>字符串</li>
+<li>数据类型</li>
+<li>list和tuple</li>
+<li>条件判断和循环</li>
+<li>dict和set</li>
+<li>函数</li>
+<li>切片</li>
+<li>迭代</li>
+<li>列表生成式</li>
+</ol>
+<h2 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>整数</p>
 <p>十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2</p>
 <p>浮点数</p>
 <p>点数可以用数学写法，如1.23，3.14，-9.01，等等。但是对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10^9就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5</p>
@@ -493,6 +507,21 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-07-02-python-basic.html" title="Python 基础">http://ninganme.github.io/2017-07-02-python-basic.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -508,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-07-01-ss-shadowsocks-ubuntu-install-config.html" rel="next" title="在 Ubuntu 上部署 shaodowsocks, 并优化速度">
-                <i class="fa fa-chevron-left"></i> 在 Ubuntu 上部署 shaodowsocks, 并优化速度
+              <a href="/2017-05-18-books-read-in-2017.html" rel="next" title="2017 年读的书 更新至 5月18日">
+                <i class="fa fa-chevron-left"></i> 2017 年读的书 更新至 5月18日
               </a>
             
           </div>
@@ -518,8 +547,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016-07-05-python-bascis-supplement.html" rel="prev" title="Python 基础补充">
-                Python 基础补充 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-07-07-linux-basic.html" rel="prev" title="Linux 基础入门">
+                Linux 基础入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -593,7 +622,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -643,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">1.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print语句"><span class="nav-number">1.2.</span> <span class="nav-text">print语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2"><span class="nav-number">1.2.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3"><span class="nav-number">1.2.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.4.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义字符串"><span class="nav-number">1.5.</span> <span class="nav-text">定义字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-字符串"><span class="nav-number">1.6.</span> <span class="nav-text">Unicode 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2-1"><span class="nav-number">1.6.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3-1"><span class="nav-number">1.6.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数和浮点数"><span class="nav-number">1.7.</span> <span class="nav-text">整数和浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2-7"><span class="nav-number">1.7.1.</span> <span class="nav-text">python2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3-2"><span class="nav-number">1.7.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔类型"><span class="nav-number">1.8.</span> <span class="nav-text">布尔类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List和Tuple类型"><span class="nav-number">2.</span> <span class="nav-text">List和Tuple类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造列表"><span class="nav-number">2.1.</span> <span class="nav-text">构造列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新元素"><span class="nav-number">2.2.</span> <span class="nav-text">添加新元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素"><span class="nav-number">2.3.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换元素"><span class="nav-number">2.4.</span> <span class="nav-text">替换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建元组"><span class="nav-number">2.5.</span> <span class="nav-text">创建元组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件判断和循环"><span class="nav-number">3.</span> <span class="nav-text">条件判断和循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-语句"><span class="nav-number">3.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-else-语句"><span class="nav-number">3.2.</span> <span class="nav-text">if - else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else-语句"><span class="nav-number">3.3.</span> <span class="nav-text">if-elif-else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-循环"><span class="nav-number">3.4.</span> <span class="nav-text">for 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-循环"><span class="nav-number">3.5.</span> <span class="nav-text">while 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-退出循环"><span class="nav-number">3.6.</span> <span class="nav-text">break 退出循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-继续循环"><span class="nav-number">3.7.</span> <span class="nav-text">continue 继续循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重循环"><span class="nav-number">3.8.</span> <span class="nav-text">多重循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dict和Set类型"><span class="nav-number">4.</span> <span class="nav-text">Dict和Set类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-dict"><span class="nav-number">4.1.</span> <span class="nav-text">什么是 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问-dict"><span class="nav-number">4.2.</span> <span class="nav-text">访问 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict-的特点"><span class="nav-number">4.3.</span> <span class="nav-text">dict 的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-dict"><span class="nav-number">4.4.</span> <span class="nav-text">更新 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历-dict"><span class="nav-number">4.5.</span> <span class="nav-text">遍历 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-set-集合"><span class="nav-number">4.6.</span> <span class="nav-text">什么是 set 集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问-set"><span class="nav-number">4.7.</span> <span class="nav-text">访问 set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-的特点"><span class="nav-number">4.8.</span> <span class="nav-text">set 的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历set"><span class="nav-number">4.9.</span> <span class="nav-text">遍历set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-set"><span class="nav-number">4.10.</span> <span class="nav-text">更新 set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数"><span class="nav-number">5.1.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写函数"><span class="nav-number">5.2.</span> <span class="nav-text">编写函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数之返回多值"><span class="nav-number">5.3.</span> <span class="nav-text">函数之返回多值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归函数"><span class="nav-number">5.4.</span> <span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认参数"><span class="nav-number">5.5.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变参数"><span class="nav-number">5.6.</span> <span class="nav-text">可变参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切片"><span class="nav-number">6.</span> <span class="nav-text">切片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对-list-tuple-进行切片"><span class="nav-number">6.1.</span> <span class="nav-text">对 list,tuple 进行切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倒序切片"><span class="nav-number">6.2.</span> <span class="nav-text">倒序切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对字符串进行切片"><span class="nav-number">6.3.</span> <span class="nav-text">对字符串进行切片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代"><span class="nav-number">7.</span> <span class="nav-text">迭代</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引迭代"><span class="nav-number">7.1.</span> <span class="nav-text">索引迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代dict的value"><span class="nav-number">7.2.</span> <span class="nav-text">迭代dict的value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代dict的key和value"><span class="nav-number">7.3.</span> <span class="nav-text">迭代dict的key和value</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表生成式"><span class="nav-number">8.</span> <span class="nav-text">列表生成式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂表达式"><span class="nav-number">8.1.</span> <span class="nav-text">复杂表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件过滤"><span class="nav-number">8.2.</span> <span class="nav-text">条件过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层表达式"><span class="nav-number">8.3.</span> <span class="nav-text">多层表达式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和数据类型"><span class="nav-number">2.</span> <span class="nav-text">变量和数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print语句"><span class="nav-number">2.2.</span> <span class="nav-text">print语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2"><span class="nav-number">2.2.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3"><span class="nav-number">2.2.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">2.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.4.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义字符串"><span class="nav-number">2.5.</span> <span class="nav-text">定义字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-字符串"><span class="nav-number">2.6.</span> <span class="nav-text">Unicode 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2-1"><span class="nav-number">2.6.1.</span> <span class="nav-text">python2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3-1"><span class="nav-number">2.6.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数和浮点数"><span class="nav-number">2.7.</span> <span class="nav-text">整数和浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python2-7"><span class="nav-number">2.7.1.</span> <span class="nav-text">python2.7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python3-2"><span class="nav-number">2.7.2.</span> <span class="nav-text">python3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔类型"><span class="nav-number">2.8.</span> <span class="nav-text">布尔类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List和Tuple类型"><span class="nav-number">3.</span> <span class="nav-text">List和Tuple类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造列表"><span class="nav-number">3.1.</span> <span class="nav-text">构造列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新元素"><span class="nav-number">3.2.</span> <span class="nav-text">添加新元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素"><span class="nav-number">3.3.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换元素"><span class="nav-number">3.4.</span> <span class="nav-text">替换元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建元组"><span class="nav-number">3.5.</span> <span class="nav-text">创建元组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件判断和循环"><span class="nav-number">4.</span> <span class="nav-text">条件判断和循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-语句"><span class="nav-number">4.1.</span> <span class="nav-text">if 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-else-语句"><span class="nav-number">4.2.</span> <span class="nav-text">if - else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else-语句"><span class="nav-number">4.3.</span> <span class="nav-text">if-elif-else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-循环"><span class="nav-number">4.4.</span> <span class="nav-text">for 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-循环"><span class="nav-number">4.5.</span> <span class="nav-text">while 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-退出循环"><span class="nav-number">4.6.</span> <span class="nav-text">break 退出循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue-继续循环"><span class="nav-number">4.7.</span> <span class="nav-text">continue 继续循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重循环"><span class="nav-number">4.8.</span> <span class="nav-text">多重循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dict和Set类型"><span class="nav-number">5.</span> <span class="nav-text">Dict和Set类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-dict"><span class="nav-number">5.1.</span> <span class="nav-text">什么是 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问-dict"><span class="nav-number">5.2.</span> <span class="nav-text">访问 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict-的特点"><span class="nav-number">5.3.</span> <span class="nav-text">dict 的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-dict"><span class="nav-number">5.4.</span> <span class="nav-text">更新 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历-dict"><span class="nav-number">5.5.</span> <span class="nav-text">遍历 dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-set-集合"><span class="nav-number">5.6.</span> <span class="nav-text">什么是 set 集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问-set"><span class="nav-number">5.7.</span> <span class="nav-text">访问 set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-的特点"><span class="nav-number">5.8.</span> <span class="nav-text">set 的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历set"><span class="nav-number">5.9.</span> <span class="nav-text">遍历set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-set"><span class="nav-number">5.10.</span> <span class="nav-text">更新 set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数"><span class="nav-number">6.1.</span> <span class="nav-text">调用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写函数"><span class="nav-number">6.2.</span> <span class="nav-text">编写函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数之返回多值"><span class="nav-number">6.3.</span> <span class="nav-text">函数之返回多值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归函数"><span class="nav-number">6.4.</span> <span class="nav-text">递归函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认参数"><span class="nav-number">6.5.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变参数"><span class="nav-number">6.6.</span> <span class="nav-text">可变参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切片"><span class="nav-number">7.</span> <span class="nav-text">切片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对-list-tuple-进行切片"><span class="nav-number">7.1.</span> <span class="nav-text">对 list,tuple 进行切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倒序切片"><span class="nav-number">7.2.</span> <span class="nav-text">倒序切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对字符串进行切片"><span class="nav-number">7.3.</span> <span class="nav-text">对字符串进行切片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代"><span class="nav-number">8.</span> <span class="nav-text">迭代</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引迭代"><span class="nav-number">8.1.</span> <span class="nav-text">索引迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代dict的value"><span class="nav-number">8.2.</span> <span class="nav-text">迭代dict的value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代dict的key和value"><span class="nav-number">8.3.</span> <span class="nav-text">迭代dict的key和value</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表生成式"><span class="nav-number">9.</span> <span class="nav-text">列表生成式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂表达式"><span class="nav-number">9.1.</span> <span class="nav-text">复杂表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件过滤"><span class="nav-number">9.2.</span> <span class="nav-text">条件过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层表达式"><span class="nav-number">9.3.</span> <span class="nav-text">多层表达式</span></a></li></ol></li></ol></div>
             
 
           </div>

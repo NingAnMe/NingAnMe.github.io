@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="NingAnMe, Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="内容 文件的基本概念 掌握文件的基本操作 了解文件属性及linux 系统的文件管理机制 掌握os模块对文件和目录的处理  基本概念文件: Python中文件是对象 linux文件: 一切设备都可以看成文件 例如: 磁盘文件,管道,网络Socket,外设等 Python文件基础操作文件打开方式f = open(name,) : 默认为只读方式 : ‘r’ : 只读方式,文件必须存在 ‘w’ : 只写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 文件处理">
+<meta property="og:url" content="http://ninganme.github.io/2017-07-26-python-doc.html">
+<meta property="og:site_name" content="NingAnMe">
+<meta property="og:description" content="内容 文件的基本概念 掌握文件的基本操作 了解文件属性及linux 系统的文件管理机制 掌握os模块对文件和目录的处理  基本概念文件: Python中文件是对象 linux文件: 一切设备都可以看成文件 例如: 磁盘文件,管道,网络Socket,外设等 Python文件基础操作文件打开方式f = open(name,) : 默认为只读方式 : ‘r’ : 只读方式,文件必须存在 ‘w’ : 只写">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-12T04:40:43.465Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 文件处理">
+<meta name="twitter:description" content="内容 文件的基本概念 掌握文件的基本操作 了解文件属性及linux 系统的文件管理机制 掌握os模块对文件和目录的处理  基本概念文件: Python中文件是对象 linux文件: 一切设备都可以看成文件 例如: 磁盘文件,管道,网络Socket,外设等 Python文件基础操作文件打开方式f = open(name,) : 默认为只读方式 : ‘r’ : 只读方式,文件必须存在 ‘w’ : 只写">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":50},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ninganme.github.io/2017-07-26-python-doc.html"/>
+
+
+
+
+
+  <title>Python 文件处理 | NingAnMe</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">NingAnMe</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-github">
+          <a href="https://github.com/ninganme" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-github"></i> <br />
+            
+            GitHub
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cv">
+          <a href="/cv/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-07-26-python-doc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NingAnMe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NingAnMe">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python 文件处理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T18:52:53+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>文件的基本概念</li>
+<li>掌握文件的基本操作</li>
+<li>了解文件属性及linux 系统的文件管理机制</li>
+<li>掌握os模块对文件和目录的处理</li>
+</ol>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>文件: Python中文件是对象</p>
+<p>linux文件: 一切设备都可以看成文件</p>
+<p>例如: 磁盘文件,管道,网络Socket,外设等</p>
+<h2 id="Python文件基础操作"><a href="#Python文件基础操作" class="headerlink" title="Python文件基础操作"></a>Python文件基础操作</h2><h3 id="文件打开方式"><a href="#文件打开方式" class="headerlink" title="文件打开方式"></a>文件打开方式</h3><p>f = open(name,<mode>) : 默认为只读方式</mode></p>
+<p><mode>:</mode></p>
+<p>‘r’ : 只读方式,文件必须存在</p>
+<p>‘w’ : 只写方式,文件不存在就创建,文件存在会清空内容</p>
+<p>‘a’ : 追加方式,在文件结尾处追加内容</p>
+<p>‘r+’ : 读写方式,不会清空内容</p>
+<p>‘w+’ : 读写方式,会清空内容</p>
+<p>‘a+’ : 追加和读写方式</p>
+<p>二进制方式打开文件加一个 ‘b’  如  ‘rb’ ‘wb’</p>
+<p>关闭文件方法</p>
+<p>f.close()</p>
+<h3 id="文件的读取方式"><a href="#文件的读取方式" class="headerlink" title="文件的读取方式"></a>文件的读取方式</h3><p>读取方式 :</p>
+<p><size> 表示读取多少字节</size></p>
+<p>read(<size>) : 读取整个文件</size></p>
+<p>readline(<size>) : 读取一行</size></p>
+<p>readlines(<size>) : 读取一个 python_buffer 大小,返回每一行作为一个元素的列表</size></p>
+<p>iter() : 使用迭代器真正读取整个文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'imooc.txt'</span>)</div><div class="line">iter_f = iter(f)</div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> iter:</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<h3 id="文件的写入方式"><a href="#文件的写入方式" class="headerlink" title="文件的写入方式"></a>文件的写入方式</h3><p>写入方式</p>
+<p>write(str) : 将字符串写入文件</p>
+<p>writelines(sequence_of_strings) : 写入一个字符串组成的序列(元组,列表等)到文件</p>
+<p>写入文件内容有一个文件缓冲的过程</p>
+<p>打开文件进行写入以后,调用关闭方式close()或者flush()以后,或者写入数据量大于写缓存的时候,缓冲的内容才真正写入文件</p>
+<h3 id="文件的关闭"><a href="#文件的关闭" class="headerlink" title="文件的关闭"></a>文件的关闭</h3><p>将写缓存同步到磁盘</p>
+<p>Linux 系统每个进程打开文件的个数是有限制的</p>
+<p>打开文件以后, fileno 会加 1,如果大于限制,打开文件就会失败</p>
+<p>所以必须养成良好的编码习惯,打开文件处理完毕以后一定要记得关闭</p>
+<h3 id="写入和读取问题"><a href="#写入和读取问题" class="headerlink" title="写入和读取问题"></a>写入和读取问题</h3><ol>
+<li>写入文件后,必须打开才能读取写入内容</li>
+<li>读取文件后,无法重新再次读取读过的内容</li>
+</ol>
+<p>文件指针操作:</p>
+<p>seek(offset[, whence]) :  移动文件指针<br>    offset : 偏移量,可以为负数<br>    whence : 便宜相对位置</p>
+<p>文件指针定位方式:</p>
+<p>os.SEEK_SET : 相对文件起始位置</p>
+<p>os.SEEK_CUR : 相对文件当前位置</p>
+<p>os.SEEK_END : 相对文件结尾位置</p>
+<p>f.tell()  返回当前文件的偏移</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.read(3)</div><div class="line">`012`</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.tell()</div><div class="line">3</div><div class="line"></div><div class="line"><span class="meta">#</span> 将指针移动到起始位置</div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.seek(0, os.SEEK_SET)</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.tell()</div><div class="line">0</div><div class="line"></div><div class="line"><span class="meta">#</span> 将指针移动到末尾位置</div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.seek(0, os.SEEK_END)</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.tell()</div><div class="line">17</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.read()</div><div class="line">''</div><div class="line"></div><div class="line"><span class="meta">#</span> 将指针移动到 -5 位置</div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.seek(-5, os.SEEK_CUR)</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.tell()</div><div class="line">12</div><div class="line"></div><div class="line"><span class="meta">&gt;</span>&gt;&gt;f.read()</div><div class="line">'cdef/n'</div></pre></td></tr></table></figure>
+<h2 id="文件属性-OS模块使用"><a href="#文件属性-OS模块使用" class="headerlink" title="文件属性,OS模块使用"></a>文件属性,OS模块使用</h2><h3 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h3><p>f.fileno() : 文件描述符</p>
+<p>f.mode() : 文件打开权限</p>
+<p>f.encoding() : 文件编码格式</p>
+<p>f.closed() : 文件是否关闭</p>
+<h3 id="标准文件"><a href="#标准文件" class="headerlink" title="标准文件"></a>标准文件</h3><p>sys.stdin 标准输入</p>
+<p>sys.stdout 标准输出</p>
+<p>sys.stderr 标准错误</p>
+<p>sys.argv 通过该属性可以得到命令行参数,是字符串组成的列表</p>
+<p>文件的编码方式</p>
+<p>python2 默认创建的文件是ACILL格式,需要转换为 utf-8 格式才能输入中文</p>
+<p>a = unicode.encode(u’你好’, ‘utf-8’)</p>
+<p>codecs 模块可以指定打开文件的编码方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codecs</div><div class="line"></div><div class="line">f = open(<span class="string">'test'</span>, <span class="string">'r+'</span>, <span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+<h3 id="Linux-文件系统简介"><a href="#Linux-文件系统简介" class="headerlink" title="Linux 文件系统简介"></a>Linux 文件系统简介</h3><p>Python 解释器得到一个对象以后,首先通过 SystemApI 获得它的文件描述符(文件节点),然后通过 SystemCall 调用虚拟文件系统,虚拟文件系统会调用对应设备驱动,再对硬件进行操作</p>
+<h3 id="OS-模块对文件进行操作"><a href="#OS-模块对文件进行操作" class="headerlink" title="OS 模块对文件进行操作"></a>OS 模块对文件进行操作</h3><p>打开文件</p>
+<p>os.open(filename, flag, <mode>)</mode></p>
+<p>flag:<br>os.O_CREAT: 创建文件<br>os.O_RDONL: 只读方式打开<br>os.O_WRONLY: 只写方式打开<br>os.O_RDWR: 读写方式打开</p>
+<p>读取文件</p>
+<p>os.read(fd, buffersize)</p>
+<p>写入文件</p>
+<p>os.write(fd, string)</p>
+<p>文件指针操作</p>
+<p>os.lseek(fd, pos, how)</p>
+<p>关闭文件</p>
+<p>os.close(fd)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fd = os.open(&apos;imooc.txt&apos;, os.O_CREAT | os.O_RDWR)</div><div class="line">n = os.write(fd, &apos;imooc&apos;)</div><div class="line">l = os.lseek(fd, 0, os.SEEK_SET)</div><div class="line">str = os.read(fd, 5)</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>os模块常用方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>os.access(path, mode)</td>
+<td>判断该文件权限:F_OK 存在,R_OK,W_OK,X_OK,读,写,执行</td>
+</tr>
+<tr>
+<td>os.lisdir(path)</td>
+<td>返回当前目录下所有文件组成的列表</td>
+</tr>
+<tr>
+<td>os.remove(path)</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>os.rename(old,new)</td>
+<td>修改文件或者目录名</td>
+</tr>
+<tr>
+<td>os.mkdir(path,<mode>)</mode></td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>os.makedirs(path,<mode>)</mode></td>
+<td>创建多级目录</td>
+</tr>
+<tr>
+<td>os.remobedirs(path)</td>
+<td>删除多级目录</td>
+</tr>
+<tr>
+<td>remdir(path)</td>
+<td>删除目录(目录必须空目录)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>os.path模块常用方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exists(path)</td>
+<td>当前路径是否存在</td>
+</tr>
+<tr>
+<td>isdir(path)</td>
+<td>是否是一个目录</td>
+</tr>
+<tr>
+<td>isfile(path)</td>
+<td>是否是一个文件</td>
+</tr>
+<tr>
+<td>getsize(filename)</td>
+<td>返回文件大小</td>
+</tr>
+<tr>
+<td>dirname(path)</td>
+<td>返回路径的目录</td>
+</tr>
+<tr>
+<td>basename(path)</td>
+<td>返回路径的文件名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件练习"><a href="#文件练习" class="headerlink" title="文件练习"></a>文件练习</h2><p>内容:</p>
+<p>使用Python管理ini文件:实现查询,添加,删除,保存</p>
+<p>练习目的:</p>
+<p>掌握文件基本操作,认识ini文件,了解ConfigParser</p>
+<p>文件格式:</p>
+<p>节: [session]</p>
+<p>选项(键=值): name=value</p>
+<p>ConfigParser 的常用操作 :</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ConfigParser</div><div class="line">cfg = ConfigParser.ConfigParser</div><div class="line"><span class="comment"># 读取配置文件</span></div><div class="line">cfg.read(<span class="string">'./ini.txt'</span>)</div><div class="line"><span class="comment"># 获取节信息列表</span></div><div class="line">cfg.sections(<span class="string">'./ini.txt'</span>)</div><div class="line"><span class="comment"># 获取选项信息</span></div><div class="line">cfg.items(&lt;sections&gt;)</div><div class="line"><span class="comment"># 修改添加选项信息</span></div><div class="line">cfg.set(&lt;节信息&gt;, &lt;键信息&gt;, &lt;值信息&gt;)</div><div class="line"><span class="comment"># 删除节点信息</span></div><div class="line">cfg.remove_section(&lt;节点名&gt;)</div><div class="line"><span class="comment"># 删除选项信息</span></div><div class="line">cfg.rebome_option(&lt;节点名&gt;, &lt;键信息&gt;)</div></pre></td></tr></table></figure>
+<p>管理 ini.txt 文件:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> os.path</div><div class="line"><span class="keyword">import</span> ConfigParser</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">1: dump ini</span></div><div class="line"><span class="string">2: del section</span></div><div class="line"><span class="string">3: del item</span></div><div class="line"><span class="string">4: modify item</span></div><div class="line"><span class="string">5: add section</span></div><div class="line"><span class="string">6: save modify</span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">student_info</span><span class="params">(object)</span>:</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, recordfile)</span>:</span></div><div class="line">        self.logfile = recordfile</div><div class="line">        self.cfg = ConfigParser.ConfigParser()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cfg_load</span><span class="params">(self)</span>:</span></div><div class="line">        self.cfg.read(self.logfile)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cfg_dump</span><span class="params">(self)</span>:</span></div><div class="line">        se_list = self.cfg.sections()</div><div class="line">        <span class="keyword">print</span> <span class="string">'==============&gt;'</span></div><div class="line">        <span class="keyword">for</span> se <span class="keyword">in</span> se_list:</div><div class="line">            <span class="keyword">print</span> se</div><div class="line">            <span class="keyword">print</span> self.cfg.items(se)</div><div class="line">            <span class="keyword">print</span> <span class="string">'&lt;=============='</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delte_item</span><span class="params">(self, section, key)</span>:</span></div><div class="line">        self.cfg.remove_option(section, key)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete_section</span><span class="params">(self, sescion)</span>:</span></div><div class="line">        self.cfg.remove_section(section)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_section</span><span class="params">(self, section)</span>:</span></div><div class="line">        self.cfg.add_section(section)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_item</span><span class="params">(self, section, key, value)</span>:</span></div><div class="line">        self.cfg.add_option(section, key, value)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save</span><span class="params">(self)</span>:</span></div><div class="line">        fp = open(self.logfile, <span class="string">'w'</span>)</div><div class="line">        self.cfg.write(fp)</div><div class="line">        fp.close()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    info = student_info(<span class="string">'ini.txt'</span>)</div><div class="line">    info.cfg_load()</div><div class="line">    info.cfg_dump()</div><div class="line">    info.cfg_item(<span class="string">'userinfo'</span>, <span class="string">'pwd'</span>, <span class="string">'abc'</span>)</div><div class="line">    info.cfg_dump()</div><div class="line">    info.add_section(<span class="string">'login'</span>)</div><div class="line">    info.set_item(<span class="string">'login'</span>, <span class="string">'2015-0511'</span>, <span class="string">'20'</span>)</div><div class="line">    info.cfg_dump()</div><div class="line">    info.sava()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-07-26-python-doc.html" title="Python 文件处理">http://ninganme.github.io/2017-07-26-python-doc.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-07-17-python-oop.html" rel="next" title="Python 面向对象">
+                <i class="fa fa-chevron-left"></i> Python 面向对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-07-27-python-error-exception.html" rel="prev" title="Python 错误和异常">
+                Python 错误和异常 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/touxiang.jpg"
+               alt="NingAnMe" />
+          <p class="site-author-name" itemprop="name">NingAnMe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ninganme" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python文件基础操作"><span class="nav-number">3.</span> <span class="nav-text">Python文件基础操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件打开方式"><span class="nav-number">3.1.</span> <span class="nav-text">文件打开方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的读取方式"><span class="nav-number">3.2.</span> <span class="nav-text">文件的读取方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的写入方式"><span class="nav-number">3.3.</span> <span class="nav-text">文件的写入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的关闭"><span class="nav-number">3.4.</span> <span class="nav-text">文件的关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入和读取问题"><span class="nav-number">3.5.</span> <span class="nav-text">写入和读取问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件属性-OS模块使用"><span class="nav-number">4.</span> <span class="nav-text">文件属性,OS模块使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件属性"><span class="nav-number">4.1.</span> <span class="nav-text">文件属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准文件"><span class="nav-number">4.2.</span> <span class="nav-text">标准文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-文件系统简介"><span class="nav-number">4.3.</span> <span class="nav-text">Linux 文件系统简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OS-模块对文件进行操作"><span class="nav-number">4.4.</span> <span class="nav-text">OS 模块对文件进行操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件练习"><span class="nav-number">5.</span> <span class="nav-text">文件练习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NingAnMe</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行   Ctrl+z 将当前程序放到后台运行，恢复到前台为命令fg   Ctrl+a 将光标移至输入行头，相当于Home键   Ctrl+e 将光标移至输入行末，相当于End键   Ctrl+k 删除从光标所在位置到行末   Alt+Back">
+<meta name="description" content="内容 shell基本操作 用户文件和权限管理 目录结构和文件的基本操作 环境变量和文件查找 文件打包与解压缩 文件系统操作与磁盘管理 帮助命令 任务计划工具crontab 命令的执行顺序控制与管道 简单的文本处理 数据流重定向 正则表达式基础 Linux软件安装 进程,线程 日志系统  基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 基础入门">
-<meta property="og:url" content="http://yoursite.com/2016-07-10-linux-basics.html">
+<meta property="og:url" content="http://ninganme.github.io/2017-07-07-linux-basic.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行   Ctrl+z 将当前程序放到后台运行，恢复到前台为命令fg   Ctrl+a 将光标移至输入行头，相当于Home键   Ctrl+e 将光标移至输入行末，相当于End键   Ctrl+k 删除从光标所在位置到行末   Alt+Back">
+<meta property="og:description" content="内容 shell基本操作 用户文件和权限管理 目录结构和文件的基本操作 环境变量和文件查找 文件打包与解压缩 文件系统操作与磁盘管理 帮助命令 任务计划工具crontab 命令的执行顺序控制与管道 简单的文本处理 数据流重定向 正则表达式基础 Linux软件安装 进程,线程 日志系统  基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ct">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T10:40:02.963Z">
+<meta property="og:updated_time" content="2017-08-12T04:57:55.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 基础入门">
-<meta name="twitter:description" content="基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ctrl+s 暂停当前程序，暂停后按下任意键恢复运行   Ctrl+z 将当前程序放到后台运行，恢复到前台为命令fg   Ctrl+a 将光标移至输入行头，相当于Home键   Ctrl+e 将光标移至输入行末，相当于End键   Ctrl+k 删除从光标所在位置到行末   Alt+Back">
+<meta name="twitter:description" content="内容 shell基本操作 用户文件和权限管理 目录结构和文件的基本操作 环境变量和文件查找 文件打包与解压缩 文件系统操作与磁盘管理 帮助命令 任务计划工具crontab 命令的执行顺序控制与管道 简单的文本处理 数据流重定向 正则表达式基础 Linux软件安装 进程,线程 日志系统  基本概念及操作shell 中重要的快捷键   按键 作用     Ctrl+d 键盘输入结束或退出终端   Ct">
 
 
 
@@ -123,7 +123,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":50},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016-07-10-linux-basics.html"/>
+  <link rel="canonical" href="http://ninganme.github.io/2017-07-07-linux-basic.html"/>
 
 
 
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-07-10-linux-basics.html">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-07-07-linux-basic.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-10T11:33:50+08:00">
-                2016-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T11:33:50+08:00">
+                2017-07-07
               </time>
             
 
@@ -330,7 +330,24 @@
       
 
       
-        <h2 id="基本概念及操作"><a href="#基本概念及操作" class="headerlink" title="基本概念及操作"></a>基本概念及操作</h2><h3 id="shell-中重要的快捷键"><a href="#shell-中重要的快捷键" class="headerlink" title="shell 中重要的快捷键"></a>shell 中重要的快捷键</h3><table>
+        <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>shell基本操作</li>
+<li>用户文件和权限管理</li>
+<li>目录结构和文件的基本操作</li>
+<li>环境变量和文件查找</li>
+<li>文件打包与解压缩</li>
+<li>文件系统操作与磁盘管理</li>
+<li>帮助命令</li>
+<li>任务计划工具crontab</li>
+<li>命令的执行顺序控制与管道</li>
+<li>简单的文本处理</li>
+<li>数据流重定向</li>
+<li>正则表达式基础</li>
+<li>Linux软件安装</li>
+<li>进程,线程</li>
+<li>日志系统</li>
+</ol>
+<h2 id="基本概念及操作"><a href="#基本概念及操作" class="headerlink" title="基本概念及操作"></a>基本概念及操作</h2><h3 id="shell-中重要的快捷键"><a href="#shell-中重要的快捷键" class="headerlink" title="shell 中重要的快捷键"></a>shell 中重要的快捷键</h3><table>
 <thead>
 <tr>
 <th>按键</th>
@@ -1493,6 +1510,21 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-07-07-linux-basic.html" title="Linux 基础入门">http://ninganme.github.io/2017-07-07-linux-basic.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -1508,8 +1540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-07-05-python-advanced.html" rel="next" title="Python 进阶">
-                <i class="fa fa-chevron-left"></i> Python 进阶
+              <a href="/2017-07-02-python-basic.html" rel="next" title="Python 基础">
+                <i class="fa fa-chevron-left"></i> Python 基础
               </a>
             
           </div>
@@ -1518,8 +1550,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016-07-10-ubuntu-python-environment.html" rel="prev" title="Ubuntu 系统上详细配置 Python 工作学习一体化环境">
-                Ubuntu 系统上详细配置 Python 工作学习一体化环境 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-07-08-vim-nonsupport-python.html" rel="prev" title="VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本">
+                VIM 不支持 Python 的解决办法-编译安装 VIM 最新版本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1593,7 +1625,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1643,7 +1675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念及操作"><span class="nav-number">1.</span> <span class="nav-text">基本概念及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell-中重要的快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">shell 中重要的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通配符"><span class="nav-number">1.2.</span> <span class="nav-text">常用的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找帮助信息"><span class="nav-number">1.3.</span> <span class="nav-text">查找帮助信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户文件和权限管理"><span class="nav-number">2.</span> <span class="nav-text">用户文件和权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看用户"><span class="nav-number">2.1.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户"><span class="nav-number">2.2.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户组"><span class="nav-number">2.3.</span> <span class="nav-text">用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除用户"><span class="nav-number">2.4.</span> <span class="nav-text">删除用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">3.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件权限的概念"><span class="nav-number">3.1.</span> <span class="nav-text">文件权限的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件所有者"><span class="nav-number">3.2.</span> <span class="nav-text">修改文件所有者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件权限"><span class="nav-number">3.3.</span> <span class="nav-text">修改文件权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和文件的基本操作"><span class="nav-number">4.</span> <span class="nav-text">目录结构和文件的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">4.1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的基本操作"><span class="nav-number">4.2.</span> <span class="nav-text">文件的基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量与文件查找"><span class="nav-number">5.</span> <span class="nav-text">环境变量与文件查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">5.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令的查找路径"><span class="nav-number">5.2.</span> <span class="nav-text">命令的查找路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索文件"><span class="nav-number">5.3.</span> <span class="nav-text">搜索文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件打包与解压缩"><span class="nav-number">6.</span> <span class="nav-text">文件打包与解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zip-打所打包程序"><span class="nav-number">6.1.</span> <span class="nav-text">zip 打所打包程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unzip-解压文件"><span class="nav-number">6.2.</span> <span class="nav-text">unzip 解压文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-打包"><span class="nav-number">6.3.</span> <span class="nav-text">tar 打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-解压"><span class="nav-number">6.4.</span> <span class="nav-text">tar 解压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统操作与磁盘管理"><span class="nav-number">7.</span> <span class="nav-text">文件系统操作与磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看磁盘和目录的容量"><span class="nav-number">7.1.</span> <span class="nav-text">查看磁盘和目录的容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的磁盘管理"><span class="nav-number">7.2.</span> <span class="nav-text">简单的磁盘管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助命令"><span class="nav-number">8.</span> <span class="nav-text">帮助命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务计划工具-crontab"><span class="nav-number">9.</span> <span class="nav-text">任务计划工具 crontab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令的执行顺序控制与管道"><span class="nav-number">10.</span> <span class="nav-text">命令的执行顺序控制与管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序的控制"><span class="nav-number">10.1.</span> <span class="nav-text">命令执行顺序的控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道"><span class="nav-number">10.2.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut-命令"><span class="nav-number">10.3.</span> <span class="nav-text">cut 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">10.4.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc-命令"><span class="nav-number">10.5.</span> <span class="nav-text">wc 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-命令"><span class="nav-number">10.6.</span> <span class="nav-text">sort 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history-命令"><span class="nav-number">10.7.</span> <span class="nav-text">history 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq-命令"><span class="nav-number">10.8.</span> <span class="nav-text">uniq 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的文本处理"><span class="nav-number">11.</span> <span class="nav-text">简单的文本处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tr-命令"><span class="nav-number">11.1.</span> <span class="nav-text">tr 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#col-命令"><span class="nav-number">11.2.</span> <span class="nav-text">col 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-命令"><span class="nav-number">11.3.</span> <span class="nav-text">join 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paste-命令"><span class="nav-number">11.4.</span> <span class="nav-text">paste 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流重定向"><span class="nav-number">12.</span> <span class="nav-text">数据流重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的操作"><span class="nav-number">12.1.</span> <span class="nav-text">重定向的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件描述符"><span class="nav-number">12.2.</span> <span class="nav-text">文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-命令"><span class="nav-number">12.3.</span> <span class="nav-text">tee 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#永久重定向"><span class="nav-number">12.4.</span> <span class="nav-text">永久重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建输出描述符"><span class="nav-number">12.5.</span> <span class="nav-text">创建输出描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽命令输出"><span class="nav-number">12.6.</span> <span class="nav-text">屏蔽命令输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-xargs-分割参数列表"><span class="nav-number">12.7.</span> <span class="nav-text">使用 xargs 分割参数列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式基础"><span class="nav-number">13.</span> <span class="nav-text">正则表达式基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">13.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-适用于-perl-python-grep或者egrep"><span class="nav-number">13.2.</span> <span class="nav-text">语法,适用于 perl python grep或者egrep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">13.3.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令-1"><span class="nav-number">13.4.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本正则表达式-BRE"><span class="nav-number">13.5.</span> <span class="nav-text">基本正则表达式 BRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展表达式-ERE"><span class="nav-number">13.6.</span> <span class="nav-text">扩展表达式 ERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed-流编辑器"><span class="nav-number">13.7.</span> <span class="nav-text">sed 流编辑器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下软件安装"><span class="nav-number">14.</span> <span class="nav-text">Linux下软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apt-get"><span class="nav-number">14.1.</span> <span class="nav-text">apt-get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dpkg"><span class="nav-number">14.2.</span> <span class="nav-text">dpkg</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程概念"><span class="nav-number">15.</span> <span class="nav-text">进程概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程管理"><span class="nav-number">16.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#top-工具"><span class="nav-number">16.1.</span> <span class="nav-text">top 工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-工具的使用"><span class="nav-number">16.2.</span> <span class="nav-text">ps 工具的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pstree-使用"><span class="nav-number">16.3.</span> <span class="nav-text">pstree 使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改进程优先级"><span class="nav-number">16.4.</span> <span class="nav-text">修改进程优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统"><span class="nav-number">17.</span> <span class="nav-text">日志系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转储日志"><span class="nav-number">17.1.</span> <span class="nav-text">转储日志</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念及操作"><span class="nav-number">2.</span> <span class="nav-text">基本概念及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell-中重要的快捷键"><span class="nav-number">2.1.</span> <span class="nav-text">shell 中重要的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通配符"><span class="nav-number">2.2.</span> <span class="nav-text">常用的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找帮助信息"><span class="nav-number">2.3.</span> <span class="nav-text">查找帮助信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户文件和权限管理"><span class="nav-number">3.</span> <span class="nav-text">用户文件和权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看用户"><span class="nav-number">3.1.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建用户"><span class="nav-number">3.2.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户组"><span class="nav-number">3.3.</span> <span class="nav-text">用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除用户"><span class="nav-number">3.4.</span> <span class="nav-text">删除用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限"><span class="nav-number">4.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件权限的概念"><span class="nav-number">4.1.</span> <span class="nav-text">文件权限的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件所有者"><span class="nav-number">4.2.</span> <span class="nav-text">修改文件所有者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文件权限"><span class="nav-number">4.3.</span> <span class="nav-text">修改文件权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构和文件的基本操作"><span class="nav-number">5.</span> <span class="nav-text">目录结构和文件的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">5.1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件的基本操作"><span class="nav-number">5.2.</span> <span class="nav-text">文件的基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量与文件查找"><span class="nav-number">6.</span> <span class="nav-text">环境变量与文件查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">6.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令的查找路径"><span class="nav-number">6.2.</span> <span class="nav-text">命令的查找路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索文件"><span class="nav-number">6.3.</span> <span class="nav-text">搜索文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件打包与解压缩"><span class="nav-number">7.</span> <span class="nav-text">文件打包与解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zip-打所打包程序"><span class="nav-number">7.1.</span> <span class="nav-text">zip 打所打包程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unzip-解压文件"><span class="nav-number">7.2.</span> <span class="nav-text">unzip 解压文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-打包"><span class="nav-number">7.3.</span> <span class="nav-text">tar 打包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-解压"><span class="nav-number">7.4.</span> <span class="nav-text">tar 解压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件系统操作与磁盘管理"><span class="nav-number">8.</span> <span class="nav-text">文件系统操作与磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看磁盘和目录的容量"><span class="nav-number">8.1.</span> <span class="nav-text">查看磁盘和目录的容量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的磁盘管理"><span class="nav-number">8.2.</span> <span class="nav-text">简单的磁盘管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助命令"><span class="nav-number">9.</span> <span class="nav-text">帮助命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务计划工具-crontab"><span class="nav-number">10.</span> <span class="nav-text">任务计划工具 crontab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令的执行顺序控制与管道"><span class="nav-number">11.</span> <span class="nav-text">命令的执行顺序控制与管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序的控制"><span class="nav-number">11.1.</span> <span class="nav-text">命令执行顺序的控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道"><span class="nav-number">11.2.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cut-命令"><span class="nav-number">11.3.</span> <span class="nav-text">cut 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">11.4.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc-命令"><span class="nav-number">11.5.</span> <span class="nav-text">wc 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-命令"><span class="nav-number">11.6.</span> <span class="nav-text">sort 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history-命令"><span class="nav-number">11.7.</span> <span class="nav-text">history 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq-命令"><span class="nav-number">11.8.</span> <span class="nav-text">uniq 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的文本处理"><span class="nav-number">12.</span> <span class="nav-text">简单的文本处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tr-命令"><span class="nav-number">12.1.</span> <span class="nav-text">tr 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#col-命令"><span class="nav-number">12.2.</span> <span class="nav-text">col 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-命令"><span class="nav-number">12.3.</span> <span class="nav-text">join 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paste-命令"><span class="nav-number">12.4.</span> <span class="nav-text">paste 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流重定向"><span class="nav-number">13.</span> <span class="nav-text">数据流重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重定向的操作"><span class="nav-number">13.1.</span> <span class="nav-text">重定向的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件描述符"><span class="nav-number">13.2.</span> <span class="nav-text">文件描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee-命令"><span class="nav-number">13.3.</span> <span class="nav-text">tee 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#永久重定向"><span class="nav-number">13.4.</span> <span class="nav-text">永久重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建输出描述符"><span class="nav-number">13.5.</span> <span class="nav-text">创建输出描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏蔽命令输出"><span class="nav-number">13.6.</span> <span class="nav-text">屏蔽命令输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-xargs-分割参数列表"><span class="nav-number">13.7.</span> <span class="nav-text">使用 xargs 分割参数列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式基础"><span class="nav-number">14.</span> <span class="nav-text">正则表达式基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">14.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-适用于-perl-python-grep或者egrep"><span class="nav-number">14.2.</span> <span class="nav-text">语法,适用于 perl python grep或者egrep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">14.3.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令-1"><span class="nav-number">14.4.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本正则表达式-BRE"><span class="nav-number">14.5.</span> <span class="nav-text">基本正则表达式 BRE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展表达式-ERE"><span class="nav-number">14.6.</span> <span class="nav-text">扩展表达式 ERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed-流编辑器"><span class="nav-number">14.7.</span> <span class="nav-text">sed 流编辑器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下软件安装"><span class="nav-number">15.</span> <span class="nav-text">Linux下软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#apt-get"><span class="nav-number">15.1.</span> <span class="nav-text">apt-get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dpkg"><span class="nav-number">15.2.</span> <span class="nav-text">dpkg</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程概念"><span class="nav-number">16.</span> <span class="nav-text">进程概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程管理"><span class="nav-number">17.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#top-工具"><span class="nav-number">17.1.</span> <span class="nav-text">top 工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps-工具的使用"><span class="nav-number">17.2.</span> <span class="nav-text">ps 工具的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pstree-使用"><span class="nav-number">17.3.</span> <span class="nav-text">pstree 使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改进程优先级"><span class="nav-number">17.4.</span> <span class="nav-text">修改进程优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统"><span class="nav-number">18.</span> <span class="nav-text">日志系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转储日志"><span class="nav-number">18.1.</span> <span class="nav-text">转储日志</span></a></li></ol></li></ol></div>
             
 
           </div>

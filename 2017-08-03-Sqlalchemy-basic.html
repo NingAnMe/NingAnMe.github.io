@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下面的配置 12345678[client]default-character-set = u">
+<meta name="description" content="内容 什么是ORM和SQLAlchemy 连接与创建 描述表结构 关系定义 简单CURD  ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLAlchemy 基础">
-<meta property="og:url" content="http://yoursite.com/2016-08-06-Sqlalchemy-basics.html">
+<meta property="og:url" content="http://ninganme.github.io/2017-08-03-Sqlalchemy-basic.html">
 <meta property="og:site_name" content="NingAnMe">
-<meta property="og:description" content="ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下面的配置 12345678[client]default-character-set = u">
+<meta property="og:description" content="内容 什么是ORM和SQLAlchemy 连接与创建 描述表结构 关系定义 简单CURD  ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T10:53:51.060Z">
+<meta property="og:updated_time" content="2017-08-12T04:58:29.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLAlchemy 基础">
-<meta name="twitter:description" content="ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下面的配置 12345678[client]default-character-set = u">
+<meta name="twitter:description" content="内容 什么是ORM和SQLAlchemy 连接与创建 描述表结构 关系定义 简单CURD  ORM 与 SQLAlchemy 简介ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系 而 SQLAlchemy 就是 ORM 的一种 连接与创建打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8 sudo vim /etc/mysql/my.cnf 然后添加下">
 
 
 
@@ -123,7 +123,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":50},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016-08-06-Sqlalchemy-basics.html"/>
+  <link rel="canonical" href="http://ninganme.github.io/2017-08-03-Sqlalchemy-basic.html"/>
 
 
 
@@ -266,7 +266,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016-08-06-Sqlalchemy-basics.html">
+    <link itemprop="mainEntityOfPage" href="http://ninganme.github.io/2017-08-03-Sqlalchemy-basic.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NingAnMe">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-06T21:09:10+08:00">
-                2016-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T21:09:10+08:00">
+                2017-08-03
               </time>
             
 
@@ -330,7 +330,14 @@
       
 
       
-        <h2 id="ORM-与-SQLAlchemy-简介"><a href="#ORM-与-SQLAlchemy-简介" class="headerlink" title="ORM 与 SQLAlchemy 简介"></a>ORM 与 SQLAlchemy 简介</h2><p>ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系</p>
+        <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ol>
+<li>什么是ORM和SQLAlchemy</li>
+<li>连接与创建</li>
+<li>描述表结构</li>
+<li>关系定义</li>
+<li>简单CURD</li>
+</ol>
+<h2 id="ORM-与-SQLAlchemy-简介"><a href="#ORM-与-SQLAlchemy-简介" class="headerlink" title="ORM 与 SQLAlchemy 简介"></a>ORM 与 SQLAlchemy 简介</h2><p>ORM 对象映射关系:将数据库中的表与面向对象语言中的类建立一种对应关系</p>
 <p>而 SQLAlchemy 就是 ORM 的一种</p>
 <h2 id="连接与创建"><a href="#连接与创建" class="headerlink" title="连接与创建"></a>连接与创建</h2><p>打开 MySQL 的配置文件,将 MySQL 的默认编码改成 utf-8</p>
 <p><code>sudo vim /etc/mysql/my.cnf</code></p>
@@ -398,6 +405,21 @@
     <div>
       
         
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      NingAnMe
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ninganme.github.io/2017-08-03-Sqlalchemy-basic.html" title="SQLAlchemy 基础">http://ninganme.github.io/2017-08-03-Sqlalchemy-basic.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
 
       
     </div>
@@ -413,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016-08-05-install-use-mysql.html" rel="next" title="MySQL 的安装和基本指令">
-                <i class="fa fa-chevron-left"></i> MySQL 的安装和基本指令
+              <a href="/2017-08-02-python-mysql.html" rel="next" title="Python 操作 MySQL 数据库">
+                <i class="fa fa-chevron-left"></i> Python 操作 MySQL 数据库
               </a>
             
           </div>
@@ -423,8 +445,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017-07-15-hexo-github-pages.html" rel="prev" title="在 Github Pages 上面部署 Hexo,Unbuntu 操作环境">
-                在 Github Pages 上面部署 Hexo,Unbuntu 操作环境 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-08-05-python-regex.html" rel="prev" title="Python 正则表达式">
+                Python 正则表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,7 +520,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ORM-与-SQLAlchemy-简介"><span class="nav-number">1.</span> <span class="nav-text">ORM 与 SQLAlchemy 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接与创建"><span class="nav-number">2.</span> <span class="nav-text">连接与创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述表结构"><span class="nav-number">3.</span> <span class="nav-text">描述表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系定义"><span class="nav-number">4.</span> <span class="nav-text">关系定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一对多关系"><span class="nav-number">4.1.</span> <span class="nav-text">一对多关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一对一关系"><span class="nav-number">4.2.</span> <span class="nav-text">一对一关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多对多的关系"><span class="nav-number">4.3.</span> <span class="nav-text">多对多的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射到数据"><span class="nav-number">4.4.</span> <span class="nav-text">映射到数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单-CURD"><span class="nav-number">5.</span> <span class="nav-text">简单 CURD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create"><span class="nav-number">5.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieve"><span class="nav-number">5.2.</span> <span class="nav-text">Retrieve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update"><span class="nav-number">5.3.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete"><span class="nav-number">5.4.</span> <span class="nav-text">Delete</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">6.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORM-与-SQLAlchemy-简介"><span class="nav-number">2.</span> <span class="nav-text">ORM 与 SQLAlchemy 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接与创建"><span class="nav-number">3.</span> <span class="nav-text">连接与创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述表结构"><span class="nav-number">4.</span> <span class="nav-text">描述表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系定义"><span class="nav-number">5.</span> <span class="nav-text">关系定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一对多关系"><span class="nav-number">5.1.</span> <span class="nav-text">一对多关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一对一关系"><span class="nav-number">5.2.</span> <span class="nav-text">一对一关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多对多的关系"><span class="nav-number">5.3.</span> <span class="nav-text">多对多的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射到数据"><span class="nav-number">5.4.</span> <span class="nav-text">映射到数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单-CURD"><span class="nav-number">6.</span> <span class="nav-text">简单 CURD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create"><span class="nav-number">6.1.</span> <span class="nav-text">Create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieve"><span class="nav-number">6.2.</span> <span class="nav-text">Retrieve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update"><span class="nav-number">6.3.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete"><span class="nav-number">6.4.</span> <span class="nav-text">Delete</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">7.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
             
 
           </div>
